@@ -121,13 +121,13 @@
                                     <td class="text-right"><?= $data->stock ?></td>
                                     <td class="text-right"><?= indo_currency($data->price) ?></td>
                                     <td class="text-center" width="200px">
-                                        <button id="dtl" data-toggle="modal" data-target="#modal-detail" data-date="<?= indo_date($data->date) ?>" data-time="<?= substr($data->t_stock_qty, 11, 5) ?>" data-category="<?= $data->category_id == null ? "Umum" : $data->category_cname ?>" data-name="<?= $data->name ?>" data-uname="<?= $data->uname ?>" data-cname="<?= $data->cname ?>" data-qty="<?= $data->qty ?>" data-price="<?= indo_currency($data->price) ?>" class="btn btn-xs btn-default">
+                                        <button id="dtl" data-toggle="modal" data-target="#modal-detail" data-category="<?= $data->category_id == null ? "Umum" : $data->category_cname ?>" data-name="<?= $data->name ?>" data-uname="<?= $data->uname ?>" data-cname="<?= $data->cname ?>" data-price="<?= indo_currency($data->price) ?>" class="btn btn-xs btn-default">
                                             <i class="fa fa-eye"></i> Details
                                         </button>
-                                        <a href="<?= site_url('stock/cetak/' . $data->stock_id) ?>" target="_blank" class="btn btn-xs btn-info">
+                                        <a href="<?= site_url('stock/cetak/' . $data->item_id) ?>" target="_blank" class="btn btn-xs btn-info">
                                             <i class="fa fa-print"></i> Print
                                         </a>
-                                        <a href="<?= site_url('stock/del/' . $data->stock_id) ?>" onclick="return confirm('Apakah Anda yakin?')" class="btn btn-xs btn-danger">
+                                        <a href="<?= site_url('stock/del/' . $data->item_id) ?>" onclick="return confirm('Apakah Anda yakin?')" class="btn btn-xs btn-danger">
                                             <i class="fa fa-trash"></i> Delete
                                         </a>
                                     </td>

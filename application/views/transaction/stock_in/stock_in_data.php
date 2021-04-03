@@ -36,12 +36,12 @@
                     foreach ($row as $r => $data) { ?>
                         <tr>
                             <td width="35px"><?= $no++ ?>.</td>
-                            <td><?= $data->barcode ?></td>
+                            <td><?= $data->name ?></td>
                             <td><?= $data->item_name ?></td>
                             <td class="text-right"><?= $data->qty ?></td>
                             <td class="text-center"><?= indo_date($data->date) ?></td>
                             <td class="text-center" width="160px">
-                                <button id="dtl" data-toggle="modal" data-target="#modal-detail" data-barcode="<?= $data->barcode ?>" data-itemname="<?= $data->item_name ?>" data-detail="<?= $data->detail ?>" data-suppliername="<?= $data->supplier_name ?>" data-qty="<?= $data->qty ?>" data-date="<?= indo_date($data->date) ?>" class="btn btn-xs btn-default">
+                                <button id="dtl" data-toggle="modal" data-target="#modal-detail" data-barcode="<?= $data->name ?>" data-itemname="<?= $data->item_name ?>" data-detail="<?= $data->detail ?>" data-suppliername="<?= $data->supplier_name ?>" data-qty="<?= $data->qty ?>" data-date="<?= indo_date($data->date) ?>" class="btn btn-xs btn-default">
                                     <i class="fa fa-eye"></i> Details
                                 </button>
 

@@ -119,13 +119,56 @@
 
 
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-1">
+
+			</div>
+			<div class="col-md-9">
 				<div class="box box-solid">
 					<div class="box-header">
 						<i class="fa fa-th"></i>
-						<h3 class="box-title">Produk Terlaris Bulan Ini</h3>
+						<h3 class="box-title">Akun Pengguna</h3>
 						<div class="box-tools pull-right">
-							<button type="button" class="btn btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+							<button type="button" class="btn btn-sm" data-widget="collapse">
+								<i class="fa fa-minus">
+								</i>
+								<section class="content">
+									<div class="box">
+										<div class="box-header">
+											<h3 class="box-title">Data Pengguna System</h3>
+
+										</div>
+										<div class="box-body table-responsive">
+											<table id="table1" class="table table-bordered table-striped">
+												<thead>
+													<tr>
+
+														<th style="text-align: center;">Foto</th>
+														<th style="text-align: center;">Nama</th>
+														<th style="text-align: center;">Alamat</th>
+														<th style="text-align: center;">Dibuat Pada</th>
+														<th style="text-align: center;">Diubah pada</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+
+
+
+														<td><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+																<img style="border-radius:100%; margin-left:10%;" src="<?= base_url() ?>assets/dist/img/user1-128x128.jpg" class="user-image">
+															</a></td>
+														<td style="font-size:20px;line-height: 120px;"> <?= $this->fungsi->user_login()->username ?></td>
+														<td style="font-size:20px;line-height: 120px;"><?= $this->fungsi->user_login()->address ?></td>
+														<td style="font-size:20px;line-height: 120px;"><?= $this->fungsi->user_login()->created ?></td>
+														<td style="font-size:20px;line-height: 120px;"><?= $this->fungsi->user_login()->updated ?></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</section>
+
+							</button>
 						</div>
 					</div>
 					<div class="box-body">

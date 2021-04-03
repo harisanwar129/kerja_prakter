@@ -24,11 +24,12 @@ class stock extends CI_Controller
     public function cetak($id)
     {
         $data = array(
-            'stock' => $this->stock->get_stock($id)->row(),
-            'stock_detail' => $this->stock->get_stock_detail($id)->result(),
+            'stock' => $this->stock->get_stock($id)->result(),
+            'stock_detail' => $this->stock->get_stock($id)->result(),
         );
         $this->load->view('transaction/stock/receipt_print', $data);
     }
+
 
 
 

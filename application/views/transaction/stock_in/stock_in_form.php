@@ -109,11 +109,11 @@
 							<tr>
 								<td><?= $data->barcode ?></td>
 								<td><?= $data->name ?></td>
-								<td><?= $data->unit_name ?></td>
+								<td><?= $data->unit_uname ?></td>
 								<td><?= $data->price ?></td>
 								<td><?= $data->stock ?></td>
 								<td class="text-center">
-									<button id="select" data-id="<?= $data->item_id ?>" data-barcode="<?= $data->barcode ?>" data-name="<?= $data->name ?>" data-unit="<?= $data->unit_name ?>" data-stock="<?= $data->stock ?>" class="btn btn-xs btn-info">
+									<button id="select" data-id="<?= $data->item_id ?>" data-barcode="<?= $data->barcode ?>" data-name="<?= $data->name ?>" data-unit="<?= $data->unit_uname ?>" data-stock="<?= $data->stock ?>" class="btn btn-xs btn-info">
 										<i class="fa fa-check"></i> Select
 									</button>
 								</td>

@@ -70,8 +70,6 @@ class Report extends CI_Controller
     //baru
     public function stock()
     {
-        $this->load->model('item_m', 'item');
-        $this->load->model('customer_m', 'customer');
         $this->load->model('category_m', 'category');
         $this->load->library('pagination');
 
@@ -85,7 +83,6 @@ class Report extends CI_Controller
         } else {
             $post = $this->session->userdata('search');
         }
-
         $config['base_url'] = site_url('report/stock');
         $config['uri_segment'] = 3;
         $config['total_rows'] = $this->stock->get_stock_pagination()->num_rows();
@@ -110,12 +107,15 @@ class Report extends CI_Controller
 
         $data['title'] = 'Sales Report';
         $data['pagination'] = $this->pagination->create_links();
-        $data['customer'] = $this->customer->get()->result();
         $data['category'] = $this->category->get()->result();
-        $data['p_item'] = $this->item->get()->result();
-
         $data['row'] = $this->stock->get_stock_pagination($config['per_page'], $this->uri->segment(3));
         $data['post'] = $post;
+
         $this->template->load('_template', 'report/stock_report', $data);
+    }
+    public function stock_product($stock_id = null)
+    {
+        $detail = $this->stock->get_stock_detail($stock_id)->result();
+        echo json_encode($detail);
     }
 }

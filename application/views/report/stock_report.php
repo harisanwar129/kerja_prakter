@@ -44,13 +44,13 @@
                             <div class="col-md-4">
                                 <div class="form-horizontal">
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">Customer</label>
+                                        <label class="col-sm-3 control-label">category</label>
                                         <div class="col-sm-9">
-                                            <select name="customer" id="customer" class="form-control">
+                                            <select name="p_category" id="category" class="form-control">
                                                 <option value="">- All -</option>
-                                                <option value="null" <?= @$post['category'] == 'null' ? 'selected' : null ?>>Umum</option>
+                                                <option value="null" <?= @$post['p_categor'] == 'null' ? 'selected' : null ?>>Umum</option>
                                                 <?php foreach ($category as $cst => $data) { ?>
-                                                    <option value="<?= $data->category_id ?>" <?= @$post['category'] == $data->category_id ? 'selected' : null ?>><?= $data->cname ?></option>
+                                                    <option value="<?= $data->category_id ?>" <?= @$post['p_categor'] == $data->category_id ? 'selected' : null ?>><?= $data->cname ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -61,9 +61,9 @@
                             <div class="col-md-4">
                                 <div class="form-horizontal">
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">Invoice</label>
+                                        <label class="col-sm-3 control-label">name</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="invoice" value="<?= @$post['invoice'] ?>" class="form-control">
+                                            <input type="text" name="name" value="<?= @$post['name'] ?>" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -99,34 +99,40 @@
 
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Barcode</th>
-                                <th>Nama Barang</th>
-                                <th>Kategori</th>
-                                <th>Satuan</th>
-                                <th>Stock</th>
-                                <th>Harga</th>
+                                <th class="text-right">No</th>
+                                <th class="text-right">Barcode</th>
+                                <th class="text-right">Nama Barang</th>
+                                <th class="text-right">Satuan</th>
+                                <th class="text-right">Kategori</th>
+                                <th class="text-right">Stock</th>
+                                <th class="text-right">Harga</th>
 
                             </tr>
                         </thead>
                         <tbody>
-
-                            <?php $no = 1;
+                            <?php $no = $this->uri->segment(3) ? $this->uri->segment(3) + 1 : 1;
                             foreach ($row->result() as $r => $data) { ?>
                                 <tr>
                                     <td width="35px"><?= $no++ ?>.</td>
-                                    <td><?= $data->barcode ?></td>
-                                    <td><?= $data->name ?></td>
-                                    <td><?= $data->cname ?></td>
-                                    <td><?= $data->uname ?></td>
-                                    <td><?= $data->stock ?></td>
-                                    <td><?= $data->price ?></td>
-                                <?php } ?>
-
-
-
-
-
+                                    <td class="text-right"><?= $data->barcode ?></td>
+                                    <td class="text-right"><?= $data->name ?></td>
+                                    <td class="text-right"><?= $data->uname ?></td>
+                                    <td><?= $data->category_id == null ? "Umum" : $data->category_cname ?></td>
+                                    <td class="text-right"><?= $data->stock ?></td>
+                                    <td class="text-right"><?= indo_currency($data->price) ?></td>
+                                    <td class="text-center" width="200px">
+                                        <button id="dtl" data-toggle="modal" data-target="#modal-detail" data-date="<?= indo_date($data->date) ?>" data-time="<?= substr($data->t_stock_qty, 11, 5) ?>" data-category="<?= $data->category_id == null ? "Umum" : $data->category_cname ?>" data-name="<?= $data->name ?>" data-uname="<?= $data->uname ?>" data-cname="<?= $data->cname ?>" data-qty="<?= $data->qty ?>" data-price="<?= indo_currency($data->price) ?>" class="btn btn-xs btn-default">
+                                            <i class="fa fa-eye"></i> Details
+                                        </button>
+                                        <a href="<?= site_url('stock/cetak/' . $data->stock_id) ?>" target="_blank" class="btn btn-xs btn-info">
+                                            <i class="fa fa-print"></i> Print
+                                        </a>
+                                        <a href="<?= site_url('stock/del/' . $data->stock_id) ?>" onclick="return confirm('Apakah Anda yakin?')" class="btn btn-xs btn-danger">
+                                            <i class="fa fa-trash"></i> Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -153,35 +159,29 @@
                 <table class="table table-bordered no-margin">
                     <tbody>
                         <tr>
-                            <th style="width:20%">Invoice</th>
-                            <td style="width:30%"><span id="invoice"></span></td>
-                            <th style="width:20%">Customer</th>
+                            <th style="width:20%">name</th>
+                            <td style="width:30%"><span id="name"></span></td>
+                            <th style="width:20%">category</th>
                             <td style="width:30%"><span id="cust"></span></td>
                         </tr>
-                        <tr>
-                            <th>Date Time</th>
-                            <td><span id="datetime"></span></td>
-                            <th>Cashier</th>
-                            <td><span id="cashier"></span></td>
-                        </tr>
+
                         <tr>
                             <th>Total</th>
                             <td><span id="total"></alspan>
                             </td>
                             <th>Cash</th>
-                            <td><span id="cash"></span></td>
+                            <td><span id="qty"></span></td>
                         </tr>
                         <tr>
-                            <th>Discount</th>
-                            <td><span id="discount"></span></td>
-                            <th>Change</th>
-                            <td><span id="change"></span></td>
+                            <th>uname</th>
+                            <td><span id="uname"></span></td>
+                            <th>price</th>
+                            <td><span id="price"></span></td>
                         </tr>
                         <tr>
                             <th>Grand Total</th>
-                            <td><span id="grandtotal"></span></td>
-                            <th>Note</th>
-                            <td><span id="note"></span></td>
+                            <td><span id="cname"></span></td>
+
                         </tr>
                         <tr>
                             <th>Product</th>
@@ -194,9 +194,9 @@
     </div>
 </div>
 
-<!-- <script>
+<script>
     $(document).ready(function() {
-        $('#customer').select2()
+        $('#category').select2()
 
         $('#date1, #date2').datepicker({
             format: 'dd/mm/yyyy',
@@ -204,25 +204,24 @@
         })
 
         $(document).on('click', '#dtl', function() {
-            $('#invoice').text($(this).data('invoice'));
-            $('#datetime').text($(this).data("date") + ' ' + $(this).data('time'));
+            $('#name').text($(this).data('name'));
+
             $('#cust').text($(this).data('category'));
-            $('#total').text($(this).data('total'));
-            $('#discount').text($(this).data('discount'));
-            $('#grandtotal').text($(this).data('grandtotal'));
-            $('#cash').text($(this).data('cash'));
-            $('#change').text($(this).data('change'));
-            $('#note').text($(this).data('note'));
-            $('#cashier').text($(this).data('cashier'));
+            $('#barcode').text($(this).data('barcode'));
+            $('#uname').text($(this).data('uname'));
+            $('#cname').text($(this).data('cname'));
+            $('#qty').text($(this).data('qty'));
+            $('#price').text($(this).data('price'));
+
 
             var product = '<table class="table no-margin"><tr><th>Item</th><th>Price</th><th>Qty</th><th>Disc</th><th>Total</th></tr>';
             $.getJSON('<?= site_url('report/sale_product/') ?>' + $(this).data('saleid'), function(data) {
                 $.each(data, function(key, val) {
-                    product += '<tr><td style="width:30%">' + val.name + '</td><td>' + val.price + '</td><td style="width:10%">' + val.qty + '</td><td>' + val.discount_item + '</td><td>' + val.total + '</td></tr>';
+                    product += '<tr><td style="width:30%">' + val.name + '</td><td>' + val.price + '</td><td style="width:10%">' + val.qty + '</td><td>' + val.uname_item + '</td><td>' + val.total + '</td></tr>';
                 });
                 product += '</table>';
                 $('#product').html(product);
             });
         })
     })
-</script> -->
+</script>

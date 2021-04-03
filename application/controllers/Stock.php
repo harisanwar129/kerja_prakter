@@ -16,6 +16,26 @@ class stock extends CI_Controller
         $this->load->model('item_m', 'item');
     }
 
+
+
+
+
+
+    public function cetak($id)
+    {
+        $data = array(
+            'stock' => $this->stock->get_stock($id)->row(),
+            'stock_detail' => $this->stock->get_stock_detail($id)->result(),
+        );
+        $this->load->view('transaction/stock/receipt_print', $data);
+    }
+
+
+
+
+
+
+
     public function stock_in_data()
     {
         $data['title'] = $this->title;

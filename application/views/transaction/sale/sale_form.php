@@ -307,7 +307,7 @@
                             <tr>
                                 <td><?= $data->barcode ?></td>
                                 <td><?= $data->name ?></td>
-                                <td><?= $data->unit_name ?></td>
+                                <td><?= $data->unit_uname ?></td>
                                 <td class="text-right"><?= indo_currency($data->price) ?> IDR</td>
                                 <td class="text-right"><?= $data->stock ?></td>
                                 <td class="text-center">

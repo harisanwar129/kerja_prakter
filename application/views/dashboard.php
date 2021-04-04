@@ -186,11 +186,7 @@
 	<script>
 		Morris.Bar({
 			element: 'hero-bar',
-			data: [
-				<?php foreach ($row as $r => $data) {
-					echo "{item: '" . $data->name . "', sold: " . $data->sold . "},";
-				} ?>
-			],
+
 			xkey: 'item',
 			ykeys: ['sold'],
 			labels: ['Sold'],

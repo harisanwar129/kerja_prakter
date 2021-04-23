@@ -3,7 +3,7 @@
         </h1>
         <ol class="breadcrumb">
             <li><a><i class="fa fa-dashboard"></i></a></li>
-            <li><a>Transaction</a></li>
+            <li><a>Transksi</a></li>
             <li class="active"><?= ucwords($title) ?></li>
         </ol>
 </section>
@@ -24,7 +24,7 @@
                         </style>
                         <div class="row">
                             <div class="col-lg-9">
-                                <p style="font-size: 35px; margin-left:35%; margin-top:20px">Selamat Datang Di System Kasir <?= $this->fungsi->user_login()->name ?> </p>
+                                <p style="font-size: 35px;text-align:center; margin-left:35%; margin-top:20px">Selamat Datang Di System Kasir <?= $this->fungsi->user_login()->name ?> </p>
                             </div>
                         </div>
                         <tr>
@@ -53,13 +53,23 @@
             </div>
         </div>
 
-        <div class="col-lg-6">
+        <div class="col-lg-7">
             <div class="box box-widget">
                 <div class="box-body">
+                    <div class="col-lg-7">
+                        <div class="box box-widget">
+                            <div class="box-body">
+                                <div align="right">
+                                    <h4>Nota <b><span id="invoice"><?= $invoice ?></span></b></h4>
+                                    <h1><b><span id="grand_total2" style="font-size:50pt">0</span></b></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <table width="100%">
                         <tr>
                             <td style="vertical-align:top; width:30%">
-                                <label for="barcode">Barcode</label>
+                                <label for="barcode">Kode Barang</label>
                             </td>
                             <td>
                                 <div class="form-group input-group">
@@ -77,7 +87,7 @@
                         </tr>
                         <tr>
                             <td style="vertical-align:top">
-                                <label for="qty">Qty</label>
+                                <label for="qty">Jumlah</label>
                             </td>
                             <td>
                                 <div class="form-group">
@@ -87,7 +97,7 @@
                         </tr>
                         <tr>
                             <td style="vertical-align:top">
-                                <label for="customer">Customer</label>
+                                <label for="customer">Pelanggan</label>
                             </td>
                             <td>
                                 <div>
@@ -106,7 +116,7 @@
                                 <br>
                                 <div>
                                     <button type="button" id="add_cart" class="btn btn-primary">
-                                        <i class="fa fa-cart-plus"></i> Add
+                                        <i class="fa fa-cart-plus"></i> Tambah
                                     </button>
                                 </div>
                             </td>
@@ -115,72 +125,12 @@
                 </div>
             </div>
         </div>
-
-        <div class="col-lg-6">
-            <div class="box box-widget">
-                <div class="box-body">
-                    <div align="right">
-                        <h4>Invoice <b><span id="invoice"><?= $invoice ?></span></b></h4>
-                        <h1><b><span id="grand_total2" style="font-size:50pt">0</span></b></h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="box box-widget">
-                <div class="box-body">
-
-                    <tr>
-                        <td style="vertical-align:top">
-                            <label for="note">Note</label>
-                        </td>
-                        <td>
-                            <div>
-                                <textarea id="note" rows="3" class="form-control"></textarea>
-                            </div>
-                        </td>
-                    </tr>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="box box-widget">
-                <div class="box-body">
-                    <table width="100%">
-
-                        <tr>
-                            <td style="vertical-align:top">
-                                <label for="change">Change</label>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="number" id="change" class="form-control" readonly>
-                                </div>
-                                <br>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align:top">
-                                <label for="discount">Discount</label>
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <input type="number" id="discount" value="0" min="0" class="form-control">
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
+        <div class="col-lg-5">
             <div class="box box-widget">
                 <div class="box-body">
                     <tr>
                         <td style="vertical-align:top; width:30%">
-                            <label for="cash">Cash</label>
+                            <label for="cash">Pembayaran</label>
                         </td>
                         <td>
                             <div class="form-group">
@@ -190,6 +140,57 @@
                     </tr>
                 </div>
             </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-5">
+                <div class="box box-widget">
+                    <div class="box-body">
+                        <table width="100%">
+
+                            <tr>
+                                <td style="vertical-align:top">
+                                    <label for="change">Kembalian</label>
+                                </td>
+                                <td>
+                                    <div>
+                                        <input type="number" id="change" class="form-control" readonly>
+                                    </div>
+                                    <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:top">
+                                    <label for="discount">Potongan Harga</label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="number" id="discount" value="0" min="0" class="form-control">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="box box-widget">
+                    <div class="box-body">
+
+                        <tr>
+                            <td style="vertical-align:top">
+                                <label for="note">Catatan</label>
+                            </td>
+                            <td>
+                                <div>
+                                    <textarea id="note" rows="3" class="form-control"></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -201,14 +202,14 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Barcode</th>
-                                <th>Product Item</th>
-                                <th>Price</th>
+                                <th>No</th>
+                                <th>Kode Barang</th>
+                                <th>Nama Barang</th>
+                                <th>Harga</th>
                                 <th>Qty</th>
-                                <th width="10%">Discount Item</th>
+                                <th width="10%">Potongan Harga barang</th>
                                 <th width="15%">Total</th>
-                                <th>Actions</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody id="cart_table">
@@ -293,12 +294,12 @@
                 <table id="table1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>Barcode</th>
-                            <th>Name</th>
-                            <th>Unit</th>
-                            <th>Price</th>
-                            <th>Stock</th>
-                            <th>Actions</th>
+                            <th>Kode Barang</th>
+                            <th>Nama Barang</th>
+                            <th>Satuan</th>
+                            <th>Harga</th>
+                            <th>Persediaan</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>

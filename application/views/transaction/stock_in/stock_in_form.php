@@ -89,18 +89,18 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title">Add Product Item</h4>
+				<h4 class="modal-title">Tambah Barang</h4>
 			</div>
 			<div class="modal-body table-responsive">
 				<table id="table1" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-							<th>Barcode</th>
-							<th>Name</th>
-							<th>Unit</th>
-							<th>Price</th>
-							<th>Stock</th>
-							<th>Actions</th>
+							<th>Kode Barang</th>
+							<th>Nama</th>
+							<th>Satuan</th>
+							<th>Harga</th>
+							<th>Persediaan</th>
+							<th>Aksi</th>
 						</tr>
 					</thead>
 					<tbody>

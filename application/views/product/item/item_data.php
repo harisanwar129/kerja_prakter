@@ -15,7 +15,7 @@
             <h3 class="box-title">Data Items</h3>
             <div class="pull-right">
                 <a href="<?= site_url('item/add') ?>" class="btn btn-flat btn-primary">
-                    <i class="fa fa-plus"></i> Add Product Item
+                    <i class="fa fa-plus"></i> Tambah Product Item
                 </a>
             </div>
         </div>
@@ -23,14 +23,14 @@
             <table id="table1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>No</th>
                         <th>Barcode</th>
                         <th>Name</th>
-                        <th>Category</th>
-                        <th>Unit</th>
-                        <th>Price</th>
-                        <th>Stock</th>
-                        <th>Actions</th>
+                        <th>Kategori</th>
+                        <th>Satuan</th>
+                        <th>Harga</th>
+                        <th>Persediaan</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,10 +46,10 @@
                             <td class="text-right"><?= $data->stock ?></td>
                             <td class="text-center" width="160px">
                                 <a href="<?= site_url('item/edit/' . $data->item_id) ?>" class="btn btn-xs btn-primary">
-                                    <i class="fa fa-pencil"></i> Update
+                                    <i class="fa fa-pencil"></i> Ubah
                                 </a>
                                 <a href="<?= site_url('item/del/' . $data->item_id) ?>" onclick="return confirm('Apakah Anda yakin?')" class="btn btn-xs btn-danger">
-                                    <i class="fa fa-trash"></i> Delete
+                                    <i class="fa fa-trash"></i> Hapus
                                 </a>
                             </td>
                         </tr>

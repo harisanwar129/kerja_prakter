@@ -15,7 +15,7 @@
             <h3 class="box-title">Data Stock In</h3>
             <div class="pull-right">
                 <a href="<?= site_url('stock/in/add') ?>" class="btn btn-flat btn-primary">
-                    <i class="fa fa-plus"></i> Add Stock In
+                    <i class="fa fa-plus"></i> Tambah barang masuk
                 </a>
             </div>
         </div>
@@ -23,12 +23,12 @@
             <table id="table1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Barcode</th>
+                        <th>No</th>
+                        <th>Kode Barang</th>
                         <th>Product Item</th>
-                        <th>Qty</th>
-                        <th>Date</th>
-                        <th>Actions</th>
+                        <th>Jumlah</th>
+                        <th>Tanggal</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,15 +38,13 @@
                             <td width="35px"><?= $no++ ?>.</td>
                             <td><?= $data->name ?></td>
                             <td><?= $data->item_name ?></td>
-                            <td class="text-right"><?= $data->qty ?></td>
+                            <td class="text-center"><?= $data->qty ?></td>
                             <td class="text-center"><?= indo_date($data->date) ?></td>
                             <td class="text-center" width="160px">
-                                <button id="dtl" data-toggle="modal" data-target="#modal-detail" data-barcode="<?= $data->name ?>" data-itemname="<?= $data->item_name ?>" data-detail="<?= $data->detail ?>" data-suppliername="<?= $data->supplier_name ?>" data-qty="<?= $data->qty ?>" data-date="<?= indo_date($data->date) ?>" class="btn btn-xs btn-default">
-                                    <i class="fa fa-eye"></i> Details
-                                </button>
+
 
                                 <a href="<?= site_url('stock/in/del/' . $data->item_id . '/' . $data->stock_id) ?>" onclick="return confirm('Apakah Anda yakin?')" class="btn btn-xs btn-danger">
-                                    <i class="fa fa-trash"></i> Delete
+                                    <i class="fa fa-trash"></i> Hapus
                                 </a>
                             </td>
                         </tr>
@@ -70,7 +68,7 @@
                 <table class="table table-bordered no-margin">
                     <tbody>
                         <tr>
-                            <th style="width:35%">Barcode</th>
+                            <th style="width:35%">Kode Barang</th>
                             <td><span id="barcode"></span></td>
                         </tr>
                         <tr>
@@ -82,15 +80,15 @@
                             <td><span id="detail"></span></td>
                         </tr>
                         <tr>
-                            <th>Supplier</th>
+                            <th>Pemasok</th>
                             <td><span id="supplier_name"></span></td>
                         </tr>
                         <tr>
-                            <th>Qty</th>
+                            <th>Jumlah</th>
                             <td><span id="qty"></span></td>
                         </tr>
                         <tr>
-                            <th>Date</th>
+                            <th>Tanggal</th>
                             <td><span id="date"></span></td>
                         </tr>
                     </tbody>

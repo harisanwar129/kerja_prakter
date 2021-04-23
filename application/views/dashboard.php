@@ -36,7 +36,7 @@
 
 
 							<td><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-									<img style="border-radius:100%; margin-left:10%;" src="<?= base_url() ?>assets/dist/img/user1-128x128.jpg" class="user-image">
+									<img style="border-radius:100%; margin-left:10%;" src="<?= base_url() ?>assets/dist/img/user.png" class="user-image">
 								</a></td>
 							<td style="font-size:20px;line-height: 120px;"> <?= $this->fungsi->user_login()->username ?></td>
 							<td style="font-size:20px;line-height: 120px;"><?= $this->fungsi->user_login()->address ?></td>
@@ -155,7 +155,7 @@
 
 
 														<td><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-																<img style="border-radius:100%; margin-left:10%;" src="<?= base_url() ?>assets/dist/img/user1-128x128.jpg" class="user-image">
+																<img style="border-radius:100%; margin-left:10%;" src="<?= base_url() ?>assets/dist/img/user.png" class="user-image">
 															</a></td>
 														<td style="font-size:20px;line-height: 120px;"> <?= $this->fungsi->user_login()->username ?></td>
 														<td style="font-size:20px;line-height: 120px;"><?= $this->fungsi->user_login()->address ?></td>

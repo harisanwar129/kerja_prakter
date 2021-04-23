@@ -85,12 +85,12 @@
 				<table id="table1" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-							<th>Barcode</th>
-							<th>Name</th>
-							<th>Unit</th>
-							<th>Price</th>
-							<th>Stock</th>
-							<th>Actions</th>
+							<th>Kode Barang</th>
+							<th>Nama Barang</th>
+							<th>Satuan</th>
+							<th>Harga</th>
+							<th>Persediaan</th>
+							<th>Aksi</th>
 						</tr>
 					</thead>
 					<tbody>

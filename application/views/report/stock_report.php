@@ -19,29 +19,11 @@
                 <div class="box-body">
                     <form action="<?= site_url('report/stock') ?>" method="post">
                         <div class="row">
-                            <div class="col-md-2">
-                                <div class="form-horizontal">
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">Date</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="date1" id="date1" value="<?= @$post['date1'] ?>" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="col-md-2">
-                                <div class="form-horizontal">
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">s/d</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="date2" id="date2" value="<?= @$post['date2'] ?>" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="col-md-4">
+
+
+                            <div class="col-md-6">
                                 <div class="form-horizontal">
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">category</label>
@@ -58,7 +40,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-horizontal">
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">name</label>
@@ -99,13 +81,13 @@
 
                         <thead>
                             <tr>
-                                <th class="text-right">No</th>
-                                <th class="text-right">Barcode</th>
-                                <th class="text-right">Nama Barang</th>
-                                <th class="text-right">Satuan</th>
-                                <th class="text-right">Kategori</th>
-                                <th class="text-right">Stock</th>
-                                <th class="text-right">Harga</th>
+                                <th class="text-center">No</th>
+                                <th class="text-center">Barcode</th>
+                                <th class="text-center">Nama Barang</th>
+                                <th class="text-center">Satuan</th>
+                                <th class="text-center">Kategori</th>
+                                <th class="text-center">Stock</th>
+                                <th class="text-center">Harga</th>
 
                             </tr>
                         </thead>
@@ -114,25 +96,21 @@
                             foreach ($row->result() as $r => $data) { ?>
                                 <tr>
                                     <td width="35px"><?= $no++ ?>.</td>
-                                    <td class="text-right"><?= $data->barcode ?></td>
-                                    <td class="text-right"><?= $data->name ?></td>
-                                    <td class="text-right"><?= $data->uname ?></td>
+                                    <td class="text-center"><?= $data->barcode ?></td>
+                                    <td class="text-center"><?= $data->name ?></td>
+                                    <td class="text-center"><?= $data->uname ?></td>
                                     <td><?= $data->category_id == null ? "Umum" : $data->category_cname ?></td>
-                                    <td class="text-right"><?= $data->stock ?></td>
-                                    <td class="text-right"><?= indo_currency($data->price) ?></td>
-                                    <td class="text-center" width="200px">
-                                        <button id="dtl" data-toggle="modal" data-target="#modal-detail" data-category="<?= $data->category_id == null ? "Umum" : $data->category_cname ?>" data-name="<?= $data->name ?>" data-uname="<?= $data->uname ?>" data-cname="<?= $data->cname ?>" data-price="<?= indo_currency($data->price) ?>" class="btn btn-xs btn-default">
-                                            <i class="fa fa-eye"></i> Details
-                                        </button>
-                                        <a href="<?= site_url('stock/cetak/' . $data->item_id) ?>" target="_blank" class="btn btn-xs btn-info">
-                                            <i class="fa fa-print"></i> Print
-                                        </a>
-                                        <a href="<?= site_url('stock/del/' . $data->item_id) ?>" onclick="return confirm('Apakah Anda yakin?')" class="btn btn-xs btn-danger">
-                                            <i class="fa fa-trash"></i> Delete
-                                        </a>
-                                    </td>
+                                    <td class="text-center"><?= $data->stock ?></td>
+                                    <td class="text-center"><?= indo_currency($data->price) ?></td>
+
                                 </tr>
                             <?php } ?>
+                            <div style="float:right;width:100px">
+                                <a href="<?= site_url('stock/cetak/' . $data->item_id) ?>" target="_blank" class="btn btn-xs btn-info">
+                                    <i class="fa fa-print"></i> Print
+                                </a>
+                            </div>
+
                         </tbody>
                     </table>
                 </div>

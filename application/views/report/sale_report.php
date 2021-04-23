@@ -4,7 +4,7 @@
     </h1>
     <ol class="breadcrumb">
         <li><a><i class="fa fa-dashboard"></i></a></li>
-        <li><a>Reports</a></li>
+        <li><a>Laporan</a></li>
         <li class="active"><?= ucwords($title) ?></li>
     </ol>
 </section>
@@ -19,10 +19,10 @@
                 <div class="box-body">
                     <form action="<?= site_url('report/sale') ?>" method="post">
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <div class="form-horizontal">
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">Date</label>
+                                        <label class="col-sm-3 control-label">Tanggal</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="date1" id="date1" value="<?= @$post['date1'] ?>" class="form-control">
                                         </div>
@@ -30,7 +30,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <div class="form-horizontal">
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">s/d</label>
@@ -41,27 +41,11 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
-                                <div class="form-horizontal">
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">Customer</label>
-                                        <div class="col-sm-9">
-                                            <select name="customer" id="customer" class="form-control">
-                                                <option value="">- All -</option>
-                                                <option value="null" <?= @$post['customer'] == 'null' ? 'selected' : null ?>>Umum</option>
-                                                <?php foreach ($customer as $cst => $data) { ?>
-                                                    <option value="<?= $data->customer_id ?>" <?= @$post['customer'] == $data->customer_id ? 'selected' : null ?>><?= $data->name ?></option>
-                                                <?php } ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
                             <div class="col-md-4">
                                 <div class="form-horizontal">
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">Invoice</label>
+                                        <label class="col-sm-3 control-label">Nota</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="invoice" value="<?= @$post['invoice'] ?>" class="form-control">
                                         </div>
@@ -98,10 +82,10 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Invoice</th>
-                                <th>Date</th>
-                                <th>Customer</th>
+                                <th>No</th>
+                                <th>Nota</th>
+                                <th>Tanggal</th>
+                                <th>Pelanggan</th>
                                 <th>Total</th>
                                 <th>Discount</th>
                                 <th>Grand Total</th>
@@ -120,14 +104,12 @@
                                     <td class="text-right"><?= indo_currency($data->discount) ?></td>
                                     <td class="text-right"><?= indo_currency($data->final_price) ?></td>
                                     <td class="text-center" width="200px">
-                                        <button id="dtl" data-toggle="modal" data-target="#modal-detail" data-invoice="<?= $data->invoice ?>" data-date="<?= indo_date($data->date) ?>" data-time="<?= substr($data->sale_created, 11, 5) ?>" data-customer="<?= $data->customer_id == null ? "Umum" : $data->customer_name ?>" data-total="<?= indo_currency($data->total_price) ?>" data-discount="<?= indo_currency($data->discount) ?>" data-grandtotal="<?= indo_currency($data->final_price) ?>" data-cash="<?= indo_currency($data->cash) ?>" data-change="<?= indo_currency($data->change) ?>" data-note="<?= $data->note ?>" data-cashier="<?= ucfirst($data->user_name) ?>" data-saleid="<?= $data->sale_id ?>" class="btn btn-xs btn-default">
-                                            <i class="fa fa-eye"></i> Details
-                                        </button>
+
                                         <a href="<?= site_url('sale/cetak/' . $data->sale_id) ?>" target="_blank" class="btn btn-xs btn-info">
-                                            <i class="fa fa-print"></i> Print
+                                            <i class="fa fa-print"></i> Cetak
                                         </a>
                                         <a href="<?= site_url('sale/del/' . $data->sale_id) ?>" onclick="return confirm('Apakah Anda yakin?')" class="btn btn-xs btn-danger">
-                                            <i class="fa fa-trash"></i> Delete
+                                            <i class="fa fa-trash"></i> Hapus
                                         </a>
                                     </td>
                                 </tr>

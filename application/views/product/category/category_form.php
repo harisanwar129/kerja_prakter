@@ -22,7 +22,7 @@
 				<div class="col-md-4 col-md-offset-4">
 					<form action="<?= site_url('category/process') ?>" method="post" autocomplete="off">
 						<div class="form-group">
-							<label for="name">Category Name *</label>
+							<label for="name">Nama Kategori *</label>
 							<input type="hidden" name="id" value="<?= $row->category_id ?>">
 							<input type="text" name="cname" id="name" value="<?= $row->cname ?>" class="form-control" required>
 						</div>

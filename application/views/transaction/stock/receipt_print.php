@@ -3,7 +3,7 @@
 
 <head>
     <strong>
-        <p style="margin-bottom: 15px;font-size:30px;text-align:center;"> Toko Satria Jaya</p>
+        <p style="margin-bottom: 15px;font-size:30px;text-align:center;"> Toko Bangunan Satria Jaya</p>
     </strong>
     <p style="text-align: center;">Jln. Aria Wiratanudatar Kampung Sindanglaka Kabupaten Cianjur</p>
 

@@ -13,10 +13,10 @@
         <div class="col-lg-12"> -->
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Data Customers</h3>
+            <h3 class="box-title">Data Pelanggan</h3>
             <div class="pull-right">
                 <a href="<?= site_url('customer/add') ?>" class="btn btn-flat btn-primary">
-                    <i class="fa fa-plus"></i> Add Customer
+                    <i class="fa fa-plus"></i> Tambah Pelanggan
                 </a>
             </div>
         </div>
@@ -24,7 +24,7 @@
             <table id="table1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>No</th>
                         <th>Nama</th>
                         <th>Jenis Kelamin</th>
                         <th>No.Telepon</th>
@@ -43,10 +43,10 @@
                             <td><?= $data->address ?></td>
                             <td class="text-center" width="160px">
                                 <a href="<?= site_url('customer/edit/' . $data->customer_id) ?>" class="btn btn-xs btn-primary">
-                                    <i class="fa fa-pencil"></i> Update
+                                    <i class="fa fa-pencil"></i> Ubah
                                 </a>
                                 <a href="<?= site_url('customer/del/' . $data->customer_id) ?>" onclick="return confirm('Apakah Anda yakin?')" class="btn btn-xs btn-danger">
-                                    <i class="fa fa-trash"></i> Delete
+                                    <i class="fa fa-trash"></i> Hapus
                                 </a>
                             </td>
                         </tr>

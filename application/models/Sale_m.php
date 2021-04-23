@@ -13,7 +13,7 @@ class Sale_m extends CI_Model
 		} else {
 			$no = "0001";
 		}
-		$invoice = "YP" . date('ymd') . $no;
+		$invoice = "SJ" . date('ymd') . $no;
 		return $invoice;
 	}
 

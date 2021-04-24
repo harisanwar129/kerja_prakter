@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2021 at 01:26 AM
+-- Generation Time: Apr 24, 2021 at 10:53 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -43,8 +43,7 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`customer_id`, `name`, `gender`, `phone`, `address`, `created`, `updated`) VALUES
 (1, 'Doraemon', 'Laki-laki', '08589455545', 'Cipanas', '2019-01-03 22:36:46', '2021-04-23 14:03:14'),
-(3, 'Budi', 'Perempuan', '08323875454', 'Cianjur', '2019-02-08 20:35:04', '2021-04-23 14:03:22'),
-(6, 'b', 'Laki-laki', '6', 'y', '2021-04-24 00:08:19', '2021-04-24 01:13:23');
+(3, 'Budi', 'Perempuan', '08323875454', 'Cianjur', '2019-02-08 20:35:04', '2021-04-23 14:03:22');
 
 -- --------------------------------------------------------
 
@@ -72,7 +71,8 @@ INSERT INTO `p_category` (`category_id`, `cname`, `created`, `updated`) VALUES
 (12, 'Plastik', '2021-04-23 13:49:26', NULL),
 (13, 'Lain-lain', '2021-04-23 13:52:34', NULL),
 (14, 'Alat Listrik', '2021-04-23 13:58:33', NULL),
-(15, 'ALat tukang', '2021-04-23 14:04:54', NULL);
+(15, 'ALat tukang', '2021-04-23 14:04:54', NULL),
+(18, 'dd', '2021-04-24 15:09:04', NULL);
 
 -- --------------------------------------------------------
 
@@ -97,11 +97,12 @@ CREATE TABLE `p_item` (
 --
 
 INSERT INTO `p_item` (`item_id`, `name`, `barcode`, `category_id`, `unit_id`, `price`, `stock`, `created`, `updated`) VALUES
-(10, 'Semen 3 Roda', 'A001', 9, 13, 50000, 896, '2021-04-23 13:54:54', NULL),
-(11, 'Pintu Kayu', 'A002', 11, 13, 30000, 100, '2021-04-23 13:57:00', NULL),
-(12, 'Terminal 2 lubang', 'A003', 14, 13, 20000, 209, '2021-04-23 13:59:33', NULL),
-(13, 'Kabel Putih', 'A004', 14, 9, 10000, 4549, '2021-04-23 14:01:03', NULL),
-(14, 'Palu', 'A006', 15, 13, 15000, 452, '2021-04-23 14:06:02', NULL);
+(10, 'Semen 3 Roda', 'A001', 9, 13, 50000, 892, '2021-04-23 13:54:54', NULL),
+(11, 'Pintu Kayu', 'A002', 11, 13, 30000, 40, '2021-04-23 13:57:00', NULL),
+(12, 'Terminal 2 lubang', 'A003', 14, 13, 20000, 206, '2021-04-23 13:59:33', NULL),
+(13, 'Kabel Putih', 'A004', 14, 9, 10000, 4548, '2021-04-23 14:01:03', NULL),
+(14, 'Palu', 'A006', 15, 13, 15000, 452, '2021-04-23 14:06:02', NULL),
+(16, 'dfsdfsd', '233423', 18, 12, 23423, 0, '2021-04-24 15:10:10', NULL);
 
 -- --------------------------------------------------------
 
@@ -197,7 +198,15 @@ INSERT INTO `t_sale` (`sale_id`, `invoice`, `customer_id`, `total_price`, `disco
 (37, 'SJ2104230001', NULL, 100000, 0, 100000, 1000000, 900000, '', '2021-04-23', 3, '2021-04-24 00:09:32'),
 (38, 'SJ2104240001', NULL, 30000, 0, 30000, 90000, 60000, '', '2021-04-24', 3, '2021-04-24 06:14:13'),
 (39, 'SJ2104240002', NULL, 50000, 0, 50000, 9000000, 8950000, '', '2021-04-24', 3, '2021-04-24 06:14:39'),
-(40, 'SJ2104240003', NULL, 1500000, 0, 1500000, 9000000, 7500000, '', '2021-04-24', 3, '2021-04-24 06:16:17');
+(40, 'SJ2104240003', NULL, 1500000, 0, 1500000, 9000000, 7500000, '', '2021-04-24', 3, '2021-04-24 06:16:17'),
+(41, 'SJ2104240004', NULL, 30000, 0, 30000, 555555, 525555, '', '2021-04-24', 3, '2021-04-24 06:34:39'),
+(42, 'SJ2104240005', NULL, 30000, 0, 30000, 50000, 20000, '', '2021-04-24', 3, '2021-04-24 06:36:36'),
+(43, 'SJ2104240006', NULL, 10000, 0, 10000, 900000, 890000, '', '2021-04-24', 2, '2021-04-24 07:36:07'),
+(44, 'SJ2104240007', NULL, 20000, 11, 19989, 900000, 880011, '', '2021-04-24', 3, '2021-04-24 12:32:23'),
+(45, 'SJ2104240008', NULL, 50000, 20000, 30000, 50000, 20000, '', '2021-04-24', 3, '2021-04-24 12:43:06'),
+(46, 'SJ2104240009', NULL, 40050, 50, 40000, 50000, 10000, '', '2021-04-24', 3, '2021-04-24 14:25:39'),
+(47, 'SJ2104240010', NULL, 140000, 40000, 100000, 200000, 100000, '', '2021-04-24', 3, '2021-04-24 14:34:16'),
+(48, 'SJ2104240011', NULL, 120000, 0, 120000, 200000, 80000, '', '2021-04-24', 3, '2021-04-24 15:00:28');
 
 --
 -- Triggers `t_sale`
@@ -257,7 +266,18 @@ INSERT INTO `t_sale_detail` (`detail_id`, `sale_id`, `item_id`, `price`, `qty`, 
 (56, 37, 10, 50000, 2, 0, 100000),
 (57, 38, 11, 30000, 1, 0, 30000),
 (58, 39, 10, 50000, 1, 0, 50000),
-(59, 40, 11, 30000, 50, 0, 1500000);
+(59, 40, 11, 30000, 50, 0, 1500000),
+(60, 41, 11, 30000, 1, 0, 30000),
+(61, 42, 11, 30000, 1, 0, 30000),
+(62, 43, 12, 20000, 1, 0, 0),
+(63, 43, 13, 10000, 1, 0, 10000),
+(64, 44, 12, 20000, 1, 0, 20000),
+(65, 45, 10, 50000, 1, 0, 50000),
+(66, 46, 10, 50000, 1, 0, 50),
+(67, 46, 12, 20000, 2, 0, 40000),
+(68, 47, 10, 50000, 2, 0, 100000),
+(69, 47, 12, 20000, 2, 0, 40000),
+(70, 48, 11, 30000, 4, 0, 120000);
 
 --
 -- Triggers `t_sale_detail`
@@ -307,7 +327,12 @@ INSERT INTO `t_stock` (`stock_id`, `item_id`, `type`, `detail`, `supplier_id`, `
 (36, 14, 'in', 'tambahan', 15, 452, '2021-04-23', '2021-04-23 14:11:41', 3),
 (37, 12, 'out', 'Rusak', NULL, 50, '2021-04-23', '2021-04-23 14:12:21', 3),
 (38, 11, 'in', 'tambahan', 15, 100, '2021-04-24', '2021-04-24 06:17:22', 3),
-(39, 11, 'out', 'rusak', NULL, 400, '2021-04-24', '2021-04-24 06:17:49', 3);
+(39, 11, 'out', 'rusak', NULL, 400, '2021-04-24', '2021-04-24 06:17:49', 3),
+(41, 12, 'in', 'dffv', 15, 3, '2021-04-24', '2021-04-24 14:35:11', 3),
+(43, 11, 'out', 'dasd', NULL, 50, '2021-04-24', '2021-04-24 14:36:04', 3),
+(44, 11, 'in', 'dsd', 15, 2, '2021-04-24', '2021-04-24 14:37:21', 3),
+(45, 11, 'in', 'etertdfgd', 16, 4, '2021-04-24', '2021-04-24 15:07:53', 3),
+(46, 11, 'out', 'fdsfsf', NULL, 10, '2021-04-24', '2021-04-24 15:08:24', 3);
 
 -- --------------------------------------------------------
 
@@ -420,19 +445,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `p_category`
 --
 ALTER TABLE `p_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `p_item`
 --
 ALTER TABLE `p_item`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `p_unit`
@@ -444,25 +469,25 @@ ALTER TABLE `p_unit`
 -- AUTO_INCREMENT for table `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `t_sale`
 --
 ALTER TABLE `t_sale`
-  MODIFY `sale_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `sale_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `t_sale_detail`
 --
 ALTER TABLE `t_sale_detail`
-  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `t_stock`
 --
 ALTER TABLE `t_stock`
-  MODIFY `stock_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `stock_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `user`

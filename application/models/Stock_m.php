@@ -25,7 +25,7 @@ class stock_m extends CI_Model
 	public function get_stock_in()
 	{
 		$this->db->select('t_stock.stock_id, 
-		p_item.name, 
+		p_item.barcode, 
 		p_item.name as item_name, 
 		qty, date, detail,
 		supplier.name as supplier_name,

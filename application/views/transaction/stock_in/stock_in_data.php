@@ -36,7 +36,7 @@
                     foreach ($row as $r => $data) { ?>
                         <tr>
                             <td width="35px"><?= $no++ ?>.</td>
-                            <td><?= $data->name ?></td>
+                            <td><?= $data->barcode ?></td>
                             <td><?= $data->item_name ?></td>
                             <td class="text-center"><?= $data->qty ?></td>
                             <td class="text-center"><?= indo_date($data->date) ?></td>

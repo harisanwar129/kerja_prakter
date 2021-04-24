@@ -1,6 +1,6 @@
 <section class="content-header">
     <h1><?= ucwords($title) ?>
-        <small>Laporan Penjualan</small>
+        <small>Laporan Stock Barang</small>
     </h1>
     <ol class="breadcrumb">
         <li><a><i class="fa fa-dashboard"></i></a></li>
@@ -131,7 +131,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title">Sales Report Detail</h4>
+                <h4 class="modal-title">Laporan Stock Barang</h4>
             </div>
             <div class="modal-body table-responsive">
                 <table class="table table-bordered no-margin">

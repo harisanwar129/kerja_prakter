@@ -88,6 +88,7 @@
                                 <th class="text-center">Kategori</th>
                                 <th class="text-center">Stock</th>
                                 <th class="text-center">Harga</th>
+                                <th class="text-center">Aksi</th>
 
                             </tr>
                         </thead>

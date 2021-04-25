@@ -22,11 +22,11 @@
 				<div class="col-md-4 col-md-offset-4">
 					<form action="<?= site_url('stock/process') ?>" method="post" autocomplete="off">
 						<div class="form-group">
-							<label for="date">Date *</label>
+							<label for="date">Tanggal *</label>
 							<input type="date" name="date" id="date" value="<?= date('Y-m-d') ?>" class="form-control" required>
 						</div>
 						<div>
-							<label for="barcode">Barcode *</label>
+							<label for="barcode">Kode Barang *</label>
 						</div>
 						<div class="form-group input-group">
 							<input type="hidden" name="item_id" id="item_id">
@@ -38,17 +38,17 @@
 							</span>
 						</div>
 						<div class="form-group">
-							<label for="item_name">Item Name</label>
+							<label for="item_name">Nama Item</label>
 							<input type="text" name="item_name" id="item_name" value="-" class="form-control" readonly>
 						</div>
 						<div class="form-group">
 							<div class="row">
 								<div class="col-md-8">
-									<label for="unit_name">Item Unit</label>
+									<label for="unit_name">Satuan</label>
 									<input type="text" name="unit_name" id="unit_name" value="-" class="form-control" readonly>
 								</div>
 								<div class="col-md-4">
-									<label for="stock">Initial Stock</label>
+									<label for="stock">Stock Awal</label>
 									<input type="text" name="stock" id="stock" value="-" class="form-control" readonly>
 								</div>
 							</div>
@@ -68,7 +68,7 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<label for="qty">Qty *</label>
+							<label for="qty">Jumlah *</label>
 							<input type="number" name="qty" id="qty" min="1" class="form-control" required>
 						</div>
 						<div class="form-group pull-right">

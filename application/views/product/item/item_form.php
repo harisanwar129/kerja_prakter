@@ -22,7 +22,7 @@
 				<div class="col-md-4 col-md-offset-4">
 					<form action="<?= site_url('item/process') ?>" method="post" autocomplete="off">
 						<div class="form-group">
-							<label for="barcode">Barcode *</label>
+							<label for="barcode">Kode Barang *</label>
 							<input type="hidden" name="id" value="<?= $row->item_id ?>">
 							<input type="text" name="barcode" id="barcode" value="<?= $row->barcode ?>" class="form-control" required>
 						</div>

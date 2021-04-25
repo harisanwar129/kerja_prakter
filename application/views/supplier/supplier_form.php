@@ -13,7 +13,7 @@
 		<div class="box-header">
 			<h3 class="box-title"><?= ucfirst($page) ?> Supplier</h3>
 			<div class="pull-right">
-				<a href="<?= site_url('supplier') ?>" class="btn btn-flat btn-warning btn-sm"><i class="fa fa-undo"></i> Back</a>
+				<a href="<?= site_url('supplier') ?>" class="btn btn-flat btn-warning btn-sm"><i class="fa fa-undo"></i> kembali</a>
 			</div>
 		</div>
 		<div class="box-body">
@@ -21,20 +21,20 @@
 				<div class="col-md-4 col-md-offset-4">
 					<form action="<?= site_url('supplier/process') ?>" method="post" autocomplete="off">
 						<div class="form-group">
-							<label for="name">Supplier Name *</label>
+							<label for="name">Nama Pemasok *</label>
 							<input type="hidden" name="id" value="<?= $row->supplier_id ?>">
 							<input type="text" name="name" id="name" value="<?= $row->name ?>" class="form-control" required>
 						</div>
 						<div class="form-group">
-							<label for="phone">Phone *</label>
+							<label for="phone">No Telephon *</label>
 							<input type="number" name="phone" id="phone" value="<?= $row->phone ?>" class="form-control" required>
 						</div>
 						<div class="form-group">
-							<label for="address">Address *</label>
+							<label for="address">Alamat *</label>
 							<textarea name="addr" id="address" class="form-control" required><?= $row->address ?></textarea>
 						</div>
 						<div class="form-group">
-							<label for="desc">Description</label>
+							<label for="desc">Deskripsi</label>
 							<textarea name="desc" id="desc" class="form-control"><?= $row->description ?></textarea>
 						</div>
 						<div class="form-group pull-right">

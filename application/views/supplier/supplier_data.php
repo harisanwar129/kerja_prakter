@@ -14,7 +14,7 @@
             <h3 class="box-title">Data Pemasok</h3>
             <div class="pull-right">
                 <a href="<?= site_url('supplier/add') ?>" class="btn btn-flat btn-primary">
-                    <i class="fa fa-plus"></i> Add Supplier
+                    <i class="fa fa-plus"></i> Tanmbah Pemasok
                 </a>
             </div>
         </div>

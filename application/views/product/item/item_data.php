@@ -42,7 +42,7 @@
                             <td><?= $data->name ?></td>
                             <td><?= $data->category_name ?></td>
                             <td><?= $data->unit_uname ?></td>
-                            <td class="text-right"><?= indo_currency($data->price) ?> IDR</td>
+                            <td class="text-right">Rp.<?= indo_currency($data->price) ?> </td>
                             <td class="text-right"><?= $data->stock ?></td>
                             <td class="text-center" width="160px">
                                 <a href="<?= site_url('item/edit/' . $data->item_id) ?>" class="btn btn-xs btn-primary">

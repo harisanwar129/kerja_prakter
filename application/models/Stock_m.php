@@ -56,10 +56,10 @@ class stock_m extends CI_Model
 	public function get_stock($id = null)
 	{
 		$post = $this->session->userdata('search');
-		$this->db->select('*, p_unit.uname as p_unit_uname,p_category.cname as category_cname, p_item.name as p_item_name');
+		$this->db->select('*, satuan.uname as satuan_uname,kategori.cname as category_cname, p_item.name as p_item_name');
 		$this->db->from('p_item');
-		$this->db->join('p_unit', 'p_item.unit_id = p_unit.unit_id');
-		$this->db->join('p_category', 'p_item.category_id = p_category.category_id');
+		$this->db->join('satuan', 'p_item.unit_id = satuan.unit_id');
+		$this->db->join('kategori', 'p_item.category_id = kategori.category_id');
 
 
 		$query = $this->db->get();
@@ -87,18 +87,18 @@ class stock_m extends CI_Model
 	function get_stock_pagination($limit = null, $start = null)
 	{
 		$post = $this->session->userdata('search');
-		$this->db->select('*, p_unit.uname as p_unit_uname,p_category.cname as category_cname, p_item.name as p_item_name');
+		$this->db->select('*, satuan.uname as satuan_uname,kategori.cname as category_cname, p_item.name as p_item_name');
 		$this->db->from('p_item');
-		$this->db->join('p_unit', 'p_item.unit_id = p_unit.unit_id');
-		$this->db->join('p_category', 'p_item.category_id = p_category.category_id');
+		$this->db->join('satuan', 'p_item.unit_id = satuan.unit_id');
+		$this->db->join('kategori', 'p_item.category_id = kategori.category_id');
 		if (!empty($post['date1']) && !empty($post['date2'])) {
 			$this->db->where("p_items.created BETWEEN '" . db_date($post['date1']) . "' AND '" . db_date($post['date2']) . "'");
 		}
-		if (!empty($post['p_category'])) {
-			if ($post['p_category'] == 'null') {
+		if (!empty($post['kategori'])) {
+			if ($post['kategori'] == 'null') {
 				$this->db->where("p_item.category_id IS NULL");
 			} else {
-				$this->db->where("p_item.category_id", $post['p_category']);
+				$this->db->where("p_item.category_id", $post['kategori']);
 			}
 		}
 		if (!empty($post['name'])) {

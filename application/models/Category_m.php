@@ -2,7 +2,7 @@
 class Category_m extends CI_Model
 {
 
-	var $table = "p_category";
+	var $table = "kategori";
 
 	public function get($id = null)
 	{

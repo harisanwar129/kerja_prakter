@@ -8,16 +8,16 @@ class Item_m extends CI_Model
 	{
 		$this->db->select('p_item.name, 
 			p_item.barcode, 
-			p_category.cname as category_name, 
-			p_unit.uname as unit_uname, 
+			kategori.cname as category_name, 
+			satuan.uname as unit_uname, 
 			p_item.price, 
 			p_item.stock, 
 			p_item.item_id, 
 			p_item.category_id, 
 			p_item.unit_id');
 		$this->db->from($this->table);
-		$this->db->join('p_category', 'p_item.category_id = p_category.category_id');
-		$this->db->join('p_unit', 'p_item.unit_id = p_unit.unit_id');
+		$this->db->join('kategori', 'p_item.category_id = kategori.category_id');
+		$this->db->join('satuan', 'p_item.unit_id = satuan.unit_id');
 		if ($id != null) {
 			$this->db->where('item_id', $id);
 		}

@@ -2,7 +2,7 @@
 class Unit_m extends CI_Model
 {
 
-	var $table = "p_unit";
+	var $table = "satuan";
 
 	public function get($id = null)
 	{

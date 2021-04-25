@@ -28,11 +28,11 @@
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">category</label>
                                         <div class="col-sm-9">
-                                            <select name="p_category" id="category" class="form-control">
+                                            <select name="kategori" id="category" class="form-control">
                                                 <option value="">- All -</option>
-                                                <option value="null" <?= @$post['p_categor'] == 'null' ? 'selected' : null ?>>Umum</option>
+                                                <option value="null" <?= @$post['kategori'] == 'null' ? 'selected' : null ?>>Umum</option>
                                                 <?php foreach ($category as $cst => $data) { ?>
-                                                    <option value="<?= $data->category_id ?>" <?= @$post['p_categor'] == $data->category_id ? 'selected' : null ?>><?= $data->cname ?></option>
+                                                    <option value="<?= $data->category_id ?>" <?= @$post['kategori'] == $data->category_id ? 'selected' : null ?>><?= $data->cname ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -102,15 +102,16 @@
                                     <td><?= $data->category_id == null ? "Umum" : $data->category_cname ?></td>
                                     <td class="text-center"><?= $data->stock ?></td>
                                     <td class="text-center"><?= indo_currency($data->price) ?></td>
+                                    <td class="text-center">
+
+                                    <a href="<?= site_url('stock/cetak/' . $data->item_id) ?>" target="_blank" class="btn btn-xs btn-info">
+                                    <i class="fa fa-print"></i> Cetak
+                                </a>
+                                    </td>
 
                                 </tr>
                             <?php } ?>
-                            <div style="float:right;width:100px">
-                                <a href="<?= site_url('stock/cetak/' . $data->item_id) ?>" target="_blank" class="btn btn-xs btn-info">
-                                    <i class="fa fa-print"></i> Print
-                                </a>
-                            </div>
-
+                           
                         </tbody>
                     </table>
                 </div>

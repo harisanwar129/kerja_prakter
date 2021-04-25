@@ -92,13 +92,11 @@
                         <td style="width:165px"><?= $value->name ?></td>
                         <td><?= $value->qty ?></td>
                         <td style="text-align:right; width:60px"><?= indo_currency($value->price) ?></td>
-                        <td style="text-align:right; width:60px"><?= indo_currency(($value->price - $value->discount_item) * $value->qty) ?></td>
+                        <td style="text-align:right; width:60px"><?= indo_currency(($value->price * $value->qty)) ?></td>
                     </tr>
 
                     <?php
-                    if ($value->discount_item > 0) {
-                        $arr_discount[] = $value->discount_item;
-                    }
+                    
                 }
 
                 foreach ($arr_discount as $key => $value) { ?>

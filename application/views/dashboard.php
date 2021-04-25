@@ -8,7 +8,7 @@
 	</section>
 	<div class="row">
 		<div class="col-lg-9">
-			<p style="font-size: 50px; margin-left:35%; margin-top:20px">Selamat Datang <?= $this->fungsi->user_login()->name ?> </p>
+			<p style="font-size: 40px; margin-left:35%; margin-top:20px">Selamat Datang <?= $this->fungsi->user_login()->name ?> </p>
 		</div>
 	</div>
 

@@ -28,7 +28,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">category</label>
                                         <div class="col-sm-9">
-                                            <select name="p_category" id="category" class="form-control">
+                                            <select name="kategori" id="category" class="form-control">
                                                 <option value="">- All -</option>
                                                 <option value="null" <?= @$post['p_categor'] == 'null' ? 'selected' : null ?>>Umum</option>
                                                 <?php foreach ($category as $cst => $data) { ?>
@@ -88,6 +88,7 @@
                                 <th class="text-center">Kategori</th>
                                 <th class="text-center">Stock</th>
                                 <th class="text-center">Harga</th>
+                                <th class="text-center">Aksi</th>
 
                             </tr>
                         </thead>
@@ -102,15 +103,19 @@
                                     <td><?= $data->category_id == null ? "Umum" : $data->category_cname ?></td>
                                     <td class="text-center"><?= $data->stock ?></td>
                                     <td class="text-center"><?= indo_currency($data->price) ?></td>
-
-                                </tr>
-                            <?php } ?>
-                            <div style="float:right;width:100px">
+                                    <td class="text-center">
+                                    
+                                    <div style="float:center;width:auto">
                                 <a href="<?= site_url('stock/cetak/' . $data->item_id) ?>" target="_blank" class="btn btn-xs btn-info">
                                     <i class="fa fa-print"></i> Print
                                 </a>
                             </div>
-
+                                    </td>
+                                </tr>
+                                
+                            <?php } ?>
+                            
+                      
                         </tbody>
                     </table>
                 </div>

@@ -28,7 +28,7 @@
     <?php } ?>
     <?php if ($this->session->userdata('level') == 1) { ?>
 
-        <body class="hold-transition skin-red <?= $this->uri->segment(1) == 'sale' ? 'sidebar-collapse' : null ?>">
+        <body class="hold-transition skin-green <?= $this->uri->segment(1) == 'sale' ? 'sidebar-collapse' : null ?>">
         <?php } ?>
         <div class="wrapper">
 
@@ -147,16 +147,24 @@
                                     <li class="<?= $this->uri->segment(1) == 'sale' ? 'active' : null ?>">
                                         <a href="<?= site_url('sale') ?>"><i class="fa fa-circle-o text-green"></i> <b>Penjualan</b></a>
                                     </li>
-                                    <li class="<?= ($this->uri->segment(1) == 'stock'
-                                                    && $this->uri->segment(2) == 'in') ? 'active' : null ?>">
-                                        <a href="<?= site_url('stock/in') ?>"><i class="fa fa-circle-o text-green"></i> Persediaan Masuk </a>
-                                    </li>
-                                    <li class="<?= ($this->uri->segment(1) == 'stock'
-                                                    && $this->uri->segment(2) == 'out') ? 'active' : null ?>">
-                                        <a href="<?= site_url('stock/out') ?>"><i class="fa fa-circle-o"></i> Persediaan Keluar</a>
-                                    </li>
-
+                                    
                                 </ul>
+                            </li>
+                           
+                        <?php } ?>
+
+                        <?php if ($this->session->userdata('level') == 1) { ?>
+
+
+                            
+                           
+                            <li class="<?= $this->uri->segment(1) == 'customer' ? 'active' : null ?>">
+                                <a href="<?= site_url('customer') ?>">
+                                    <i class="fa fa-users"></i> <span>Pelanggan</span>
+                                    <span class="pull-right-container">
+                                        <span class="label bg-purple pull-right"><?= $this->fungsi->count_customer() ?></span>
+                                    </span>
+                                </a>
                             </li>
                             <li class="<?= $this->uri->segment(1) == 'supplier' ? 'active' : null ?>">
                                 <a href="<?= site_url('supplier') ?>">
@@ -165,6 +173,35 @@
                                         <span class="label bg-purple pull-right"><?= $this->fungsi->count_supplier() ?></span>
                                     </span>
                                 </a>
+                            </li>
+                            <li class="<?= $this->uri->segment(1) == 'user' ? 'active' : null ?>">
+                                <a href="<?= site_url('user') ?>"> <i class="fa fa-user">
+                                    </i> <span>Pengguna</span>
+                                    <span class="pull-right-container">
+                                        <span class="label label-danger pull-right"><?= $this->fungsi->count_user() ?></span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="treeview <?= $this->uri->segment(1) == 'sale'
+                                                    || $this->uri->segment(1) == 'stock' ? 'active' : null ?>">
+                                <a href="#">
+                                    <i class="fa fa-shopping-cart"></i> <span>Stock Barang</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    
+                                    <li class="<?= ($this->uri->segment(1) == 'stock'
+                                                    && $this->uri->segment(2) == 'in') ? 'active' : null ?>">
+                                        <a href="<?= site_url('stock/in') ?>"><i class="fa fa-circle-o text-green"></i> Barang Masuk </a>
+                                    </li>
+                                    <li class="<?= ($this->uri->segment(1) == 'stock'
+                                                    && $this->uri->segment(2) == 'out') ? 'active' : null ?>">
+                                        <a href="<?= site_url('stock/out') ?>"><i class="fa fa-circle-o"></i> Barang Keluar</a>
+                                    </li>
+
+                                </ul>
                             </li>
                             <li class="treeview <?= $this->uri->segment(1) == 'category'
                                                     || $this->uri->segment(1) == 'unit'
@@ -188,20 +225,6 @@
                                 </ul>
                             </li>
 
-                        <?php } ?>
-
-                        <?php if ($this->session->userdata('level') == 1) { ?>
-
-
-                            <li class="header">SETTINGS</li>
-                            <li class="<?= $this->uri->segment(1) == 'user' ? 'active' : null ?>">
-                                <a href="<?= site_url('user') ?>"> <i class="fa fa-user">
-                                    </i> <span>Pengguna</span>
-                                    <span class="pull-right-container">
-                                        <span class="label label-danger pull-right"><?= $this->fungsi->count_user() ?></span>
-                                    </span>
-                                </a>
-                            </li>
                             <li class="treeview <?= $this->uri->segment(1) == 'report' ? 'active' : null ?>">
                                 <a href="#">
                                     <i class="fa fa-pie-chart"></i> <span>Laporan</span>

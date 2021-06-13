@@ -1,18 +1,16 @@
 <section class="content-header">
-    <h1><?= ucwords($title) ?>
-        <small>Kategori Barang</small>
+    <h1>Kategori Barang
     </h1>
     <ol class="breadcrumb">
         <li><a><i class="fa fa-dashboard"></i></a></li>
-        <li><a>Products</a></li>
-        <li class="active"><?= ucwords($title) ?></li>
+        <li class="active">Kategori</li>
     </ol>
 </section>
 
 <section class="content">
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Data Categories</h3>
+            <h3 class="box-title">Data Kategori</h3>
             <div class="pull-right">
                 <a href="<?= site_url('category/add') ?>" class="btn btn-flat btn-primary">
                     <i class="fa fa-plus"></i> Tambah Kategori
@@ -23,7 +21,7 @@
             <table id="table1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>No</th>
                         <th>Nama</th>
                         <th>Aksi</th>
                     </tr>

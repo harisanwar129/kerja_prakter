@@ -1,6 +1,5 @@
 <section class="content-header">
-	<h1><?= ucwords($title) ?>
-		<small>Pelanggan</small>
+	<h1>Pelanggan
 	</h1>
 	<ol class="breadcrumb">
 		<li><a><i class="fa fa-dashboard"></i></a></li>
@@ -13,7 +12,7 @@
 		<div class="box-header">
 			<h3 class="box-title"><?= ucfirst($page) ?> Pelanggan</h3>
 			<div class="pull-right">
-				<a href="<?= site_url('customer') ?>" class="btn btn-flat btn-warning btn-sm"><i class="fa fa-undo"></i> Back</a>
+				<a href="<?= site_url('customer') ?>" class="btn btn-flat btn-warning btn-sm"><i class="fa fa-undo"></i>Kembali</a>
 			</div>
 		</div>
 		<div class="box-body">
@@ -42,8 +41,8 @@
 							<textarea name="addr" id="address" class="form-control" required><?= $row->address ?></textarea>
 						</div>
 						<div class="form-group pull-right">
-							<button type="submit" name="<?= $page ?>" class="btn btn-flat btn-success"><i class="fa fa-paper-plane"></i> Save</button>
-							<button type="reset" class="btn btn-flat">Reset</button>
+							<button type="submit" name="<?= $page ?>" class="btn btn-flat btn-success"><i class="fa fa-paper-plane"></i> Simpan</button>
+							<button type="reset" class="btn btn-flat">Ulangi</button>
 						</div>
 					</form>
 				</div>

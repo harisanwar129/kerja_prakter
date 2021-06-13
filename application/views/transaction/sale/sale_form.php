@@ -1,12 +1,8 @@
 <section class="content-header">
-    <h1><?=ucwords($title)?>
-        <small>Penjualan</small>
+    <h1>Penjualan
+        
     </h1>
-    <ol class="breadcrumb">
-        <li><a><i class="fa fa-dashboard"></i></a></li>
-        <li><a>Transaction</a></li>
-        <li class="active"><?=ucwords($title)?></li>
-    </ol>
+   
 </section>
 
 <section class="content">
@@ -67,7 +63,7 @@
                     <table width="100%">
                         <tr>
                             <td style="vertical-align:top; width:30%">
-                                <label for="barcode">Barcode</label>
+                                <label for="barcode">Kode Barang</label>
                             </td>
                             <td>
                                 <div class="form-group input-group">
@@ -85,7 +81,7 @@
                         </tr>
                         <tr>
                             <td style="vertical-align:top">
-                                <label for="qty">Qty</label>
+                                <label for="qty">Jumlah</label>
                             </td>
                             <td>
                                 <div class="form-group">
@@ -95,7 +91,7 @@
                         </tr>
                         <tr>
                             <td style="vertical-align:top">
-                                <label for="customer">Customer</label>
+                                <label for="customer">Pelanggan</label>
                             </td>
                             <td>
                                 <div>
@@ -114,7 +110,7 @@
                             <br>
                                 <div>
                                     <button type="button" id="add_cart" class="btn btn-primary">
-                                        <i class="fa fa-cart-plus"></i> Add
+                                        <i class="fa fa-cart-plus"></i> Tambah
                                     </button>
                                 </div>
                             </td>
@@ -161,11 +157,11 @@
                             </tr>
                             <tr>
                                 <td style="vertical-align:top">
-                                    <label for="discount">Potongan Harga</label>
+                                    <label for="discount">Potongan Harga (Tidak Wajib Di isi)</label>
                                 </td>
                                 <td>
                                     <div class="form-group">
-                                        <input type="number" id="discount" value="0" min="0" class="form-control">
+                                        <input type="number" id="discount" value="0" min="0" class="form-control" required>
                                     </div>
                                 </td>
                             </tr>
@@ -179,7 +175,7 @@
 
                         <tr>
                             <td style="vertical-align:top">
-                                <label for="note">Catatan</label>
+                                <label for="note">Catatan (Tidak Wajib Di isi)</label>
                             </td>
                             <td>
                                 <div>
@@ -201,14 +197,14 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Barcode</th>
-                                <th>Product Item</th>
-                                <th>Price</th>
-                                <th>Qty</th>
+                                <th>No</th>
+                                <th>Kode Barang</th>
+                                <th>Nama Produk</th>
+                                <th>Harga</th>
+                                <th>Jumlah</th>
                                
                                 <th width="15%">Total</th>
-                                <th>Actions</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody id="cart_table">
@@ -270,10 +266,10 @@
         <div class="col-lg-2">
             <div>
                 <button id="cancel_payment" class="btn btn-flat btn-warning">
-                    <i class="fa fa-refresh"></i> Cancel
+                    <i class="fa fa-refresh"></i> Keluar
                 </button><br><br>
                 <button id="process_payment" class="btn btn-flat btn-lg btn-success">
-                    <i class="fa fa-paper-plane-o"></i> Process Payment
+                    <i class="fa fa-paper-plane-o"></i> Proses Pembayaran
                 </button>
             </div>
         </div>
@@ -349,11 +345,11 @@
                     <input type="text" id="product_item" class="form-control" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="price_item">Price</label>
+                    <label for="price_item">Harga</label>
                     <input type="number" id="price_item" min="0" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="qty_item">Qty</label>
+                    <label for="qty_item">Jumlah</label>
                     <input type="number" id="qty_item" min="1" class="form-control">
                 </div>
                 <div class="form-group">

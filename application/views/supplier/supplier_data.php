@@ -1,10 +1,10 @@
 <section class="content-header">
     <h1>Pemasok
-        <small>Pemasok Barang</small>
+        
     </h1>
     <ol class="breadcrumb">
         <li><a><i class="fa fa-dashboard"></i></a></li>
-        <li class="active"><?= ucwords($title) ?></li>
+        <li class="active">Pemasok</li>
     </ol>
 </section>
 
@@ -14,7 +14,7 @@
             <h3 class="box-title">Data Pemasok</h3>
             <div class="pull-right">
                 <a href="<?= site_url('supplier/add') ?>" class="btn btn-flat btn-primary">
-                    <i class="fa fa-plus"></i> Tanmbah Pemasok
+                    <i class="fa fa-plus"></i> Tambah Pemasok
                 </a>
             </div>
         </div>

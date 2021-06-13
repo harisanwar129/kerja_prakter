@@ -1,17 +1,17 @@
 <section class="content-header">
-    <h1><?= ucwords($title) ?>
-        <small>Pengguna / Karyawan</small>
+    <h1>
+        Pengguna
     </h1>
     <ol class="breadcrumb">
         <li><a><i class="fa fa-dashboard"></i></a></li>
-        <li class="active"><?= ucwords($title) ?></li>
+        <li class="active">Pengguna</li>
     </ol>
 </section>
 
 <section class="content">
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Data users</h3>
+            <h3 class="box-title">Data Pengguna</h3>
             <div class="pull-right">
                 <a href="<?= site_url('user/add') ?>" class="btn btn-flat btn-primary">
                     <i class="fa fa-user-plus"></i> Tambah Pengguna
@@ -23,7 +23,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Username</th>
+                        <th>Nama Pengguna</th>
                         <th>Nama</th>
                         <th>Alamat</th>
                         <th>Level</th>

@@ -1,20 +1,15 @@
 <section class="content-header">
-	<h1><?= ucwords($title) ?>
-		<small>Kategori Barang</small>
+	<h1>Kategori Barang
 	</h1>
-	<ol class="breadcrumb">
-		<li><a><i class="fa fa-dashboard"></i></a></li>
-		<li><a>Products</a></li>
-		<li class="active"><?= ucwords($title) ?></li>
-	</ol>
+	
 </section>
 
 <section class="content">
 	<div class="box">
 		<div class="box-header">
-			<h3 class="box-title"><?= ucfirst($page) ?> Category</h3>
+			
 			<div class="pull-right">
-				<a href="<?= site_url('category') ?>" class="btn btn-flat btn-warning btn-sm"><i class="fa fa-undo"></i> Back</a>
+				<a href="<?= site_url('category') ?>" class="btn btn-flat btn-warning btn-sm"><i class="fa fa-undo"></i> Kembali</a>
 			</div>
 		</div>
 		<div class="box-body">

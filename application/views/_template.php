@@ -85,10 +85,10 @@
                                     </li>
                                     <li class="user-footer">
                                         <div class="pull-left">
-                                            <a href="<?= site_url('dashboard') ?>" class="btn btn-default btn-flat">Profile</a>
+                                            <a href="<?= site_url('dashboard') ?>" class="btn btn-default btn-flat">Tentang Saya</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="<?= site_url('auth/logout') ?>" onclick="return confirm('Apakah Anda yakin?')" class="btn btn-md btn-danger" class="btn btn-flat bg-red">Logout</a>
+                                            <a href="<?= site_url('auth/logout') ?>" onclick="return confirm('Apakah Anda yakin?')" class="btn btn-md btn-danger" class="btn btn-flat bg-red">Keluar</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -135,21 +135,12 @@
                                     </span>
                                 </a>
                             </li>
-                            <li class="treeview <?= $this->uri->segment(1) == 'sale'
-                                                    || $this->uri->segment(1) == 'stock' ? 'active' : null ?>">
-                                <a href="#">
-                                    <i class="fa fa-shopping-cart"></i> <span>Transaksi</span>
-                                    <span class="pull-right-container">
-                                        <i class="fa fa-angle-left pull-right"></i>
-                                    </span>
-                                </a>
-                                <ul class="treeview-menu">
+                           
                                     <li class="<?= $this->uri->segment(1) == 'sale' ? 'active' : null ?>">
-                                        <a href="<?= site_url('sale') ?>"><i class="fa fa-circle-o text-green"></i> <b>Penjualan</b></a>
+                                        <a href="<?= site_url('sale') ?>"><i class="fa fa-shopping-cart"></i> <b>Penjualan</b></a>
                                     </li>
                                     
-                                </ul>
-                            </li>
+                         
                            
                         <?php } ?>
 
@@ -225,24 +216,13 @@
                                 </ul>
                             </li>
 
-                            <li class="treeview <?= $this->uri->segment(1) == 'report' ? 'active' : null ?>">
-                                <a href="#">
-                                    <i class="fa fa-pie-chart"></i> <span>Laporan</span>
-                                    <span class="pull-right-container">
-                                        <i class="fa fa-angle-left pull-right"></i>
-                                    </span>
-                                </a>
-                                <ul class="treeview-menu">
+                          
                                     <li class="<?= $this->uri->segment(1) == 'report'
                                                     && $this->uri->segment(2) == 'sale' ? 'active' : null ?>">
-                                        <a href="<?= site_url('report/sale') ?>"><i class="fa fa-circle-o"></i> Penjualan</a>
+                                        <a href="<?= site_url('report/sale') ?>"><i class="fa fa-pie-chart"></i> Laporan Penjualan</a>
                                     </li>
-                                    <li class="<?= $this->uri->segment(1) == 'report'
-                                                    && $this->uri->segment(2) == 'stock' ? 'active' : null ?>">
-                                        <a href="<?= site_url('report/stock') ?>"><i class="fa fa-circle-o"></i> Stock Barang</a>
-                                    </li>
-                                </ul>
-                            </li>
+                                    
+                          
                         <?php } ?>
 
                     </ul>

@@ -1,21 +1,19 @@
 <section class="content-header">
-    <h1><?= ucwords($title) ?>
-        <small>Data Barang</small>
+    <h1>Data Barang
     </h1>
     <ol class="breadcrumb">
         <li><a><i class="fa fa-dashboard"></i></a></li>
-        <li><a>Products</a></li>
-        <li class="active"><?= ucwords($title) ?></li>
+        <li class="active">Item</li>
     </ol>
 </section>
 
 <section class="content">
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Data Items</h3>
+            <h3 class="box-title">Data Barang</h3>
             <div class="pull-right">
                 <a href="<?= site_url('item/add') ?>" class="btn btn-flat btn-primary">
-                    <i class="fa fa-plus"></i> Tambah Product Item
+                    <i class="fa fa-plus"></i> Tambah Barang
                 </a>
             </div>
         </div>
@@ -24,8 +22,8 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Barcode</th>
-                        <th>Name</th>
+                        <th>Kode Barang</th>
+                        <th>Nama</th>
                         <th>Kategori</th>
                         <th>Satuan</th>
                         <th>Harga</th>

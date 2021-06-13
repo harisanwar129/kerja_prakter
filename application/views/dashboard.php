@@ -66,7 +66,7 @@
 		</h1>
 		<ol class="breadcrumb">
 			<li><a><i class="fa fa-dashboard"></i></a></li>
-			<li class="active"><?= $title ?></li>
+			<li class="active">Beranda</li>
 		</ol>
 	</section>
 

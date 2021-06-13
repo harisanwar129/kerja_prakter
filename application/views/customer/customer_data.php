@@ -1,10 +1,9 @@
 <section class="content-header">
-    <h1><?= ucwords($title) ?>
-        <small>Pelanggan</small>
+    <h1>Pelanggan
     </h1>
     <ol class="breadcrumb">
         <li><a><i class="fa fa-dashboard"></i></a></li>
-        <li class="active"><?= ucwords($title) ?></li>
+        <li class="active">Pelanggan</li>
     </ol>
 </section>
 

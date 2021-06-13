@@ -11,7 +11,7 @@
 <section class="content">
 	<div class="box">
 		<div class="box-header">
-			<h3 class="box-title"><?= ucfirst($page) ?> Supplier</h3>
+
 			<div class="pull-right">
 				<a href="<?= site_url('supplier') ?>" class="btn btn-flat btn-warning btn-sm"><i class="fa fa-undo"></i> kembali</a>
 			</div>
@@ -35,11 +35,11 @@
 						</div>
 						<div class="form-group">
 							<label for="desc">Deskripsi</label>
-							<textarea name="desc" id="desc" class="form-control"><?= $row->description ?></textarea>
+							<textarea name="desc" id="desc" class="form-control" required><?= $row->description ?></textarea>
 						</div>
 						<div class="form-group pull-right">
-							<button type="submit" name="<?= $page ?>" class="btn btn-flat btn-success"><i class="fa fa-paper-plane"></i> Save</button>
-							<button type="reset" class="btn btn-flat">Reset</button>
+							<button type="submit" name="<?= $page ?>" class="btn btn-flat btn-success"><i class="fa fa-paper-plane"></i> Simpan</button>
+							<button type="reset" class="btn btn-flat">Ulangi</button>
 						</div>
 					</form>
 				</div>

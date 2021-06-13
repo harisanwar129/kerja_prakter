@@ -1,20 +1,15 @@
 <section class="content-header">
-	<h1><?= ucwords($title) ?>
-		<small>Data Barang</small>
+	<h1>Data Barang
 	</h1>
-	<ol class="breadcrumb">
-		<li><a><i class="fa fa-dashboard"></i></a></li>
-		<li><a>Products</a></li>
-		<li class="active"><?= ucwords($title) ?></li>
-	</ol>
+
 </section>
 
 <section class="content">
 	<div class="box">
 		<div class="box-header">
-			<h3 class="box-title"><?= ucfirst($page) ?> Item</h3>
+			<h3 class="box-title">Tambah Barang</h3>
 			<div class="pull-right">
-				<a href="<?= site_url('item') ?>" class="btn btn-flat btn-warning btn-sm"><i class="fa fa-undo"></i> Back</a>
+				<a href="<?= site_url('item') ?>" class="btn btn-flat btn-warning btn-sm"><i class="fa fa-undo"></i>Kembali</a>
 			</div>
 		</div>
 		<div class="box-body">
@@ -47,7 +42,7 @@
 							<input type="number" name="price" id="price" value="<?= $row->price ?>" class="form-control" required>
 						</div>
 						<div class="form-group pull-right">
-							<button type="submit" name="<?= $page ?>" class="btn btn-flat btn-success"><i class="fa fa-paper-plane"></i> Save</button>
+							<button type="submit" name="<?= $page ?>" class="btn btn-flat btn-success"><i class="fa fa-paper-plane"></i> Simpan</button>
 							<button type="reset" class="btn btn-flat">Reset</button>
 						</div>
 					</form>

@@ -1,18 +1,17 @@
 <section class="content-header">
-    <h1><?= ucwords($title) ?>
-        <small>Barang Keluar</small>
+    <h1>
+        Barang Keluar
     </h1>
     <ol class="breadcrumb">
         <li><a><i class="fa fa-dashboard"></i></a></li>
-        <li><a>Transaction</a></li>
-        <li class="active"><?= ucwords($title) ?></li>
+        <li class="active">Barang Keluar</li>
     </ol>
 </section>
 
 <section class="content">
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Data Stock Out</h3>
+            <h3 class="box-title">Data Barang Keluar</h3>
             <div class="pull-right">
                 <a href="<?= site_url('stock/out/add') ?>" class="btn btn-flat btn-primary">
                     <i class="fa fa-plus"></i> Tambah Barang Keluar
@@ -25,7 +24,7 @@
                     <tr>
                         <th>No</th>
                         <th>Kode Barang</th>
-                        <th>Product Item</th>
+                        <th>Nama Barang</th>
                         <th>Jumlah</th>
                         <th>Detail</th>
                         <th>Tanggal</th>

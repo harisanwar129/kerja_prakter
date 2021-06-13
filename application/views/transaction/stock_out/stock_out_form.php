@@ -1,18 +1,14 @@
 <section class="content-header">
-	<h1><?= ucwords($title) ?>
-		<small>Barang Keluar</small>
+	<h1>
+		Barang Keluar
 	</h1>
-	<ol class="breadcrumb">
-		<li><a><i class="fa fa-dashboard"></i></a></li>
-		<li><a>Transaction</a></li>
-		<li class="active"><?= ucwords($title) ?></li>
-	</ol>
+	
 </section>
 
 <section class="content">
 	<div class="box">
 		<div class="box-header">
-			<h3 class="box-title">Add Stock Out</h3>
+			<h3 class="box-title">Tambah Barang Keluar</h3>
 			<div class="pull-right">
 				<a href="<?= site_url('stock/out') ?>" class="btn btn-flat btn-warning btn-sm"><i class="fa fa-undo"></i> Back</a>
 			</div>
@@ -22,11 +18,11 @@
 				<div class="col-md-4 col-md-offset-4">
 					<form action="<?= site_url('stock/process') ?>" method="post" autocomplete="off">
 						<div class="form-group">
-							<label for="date">Tanggal *</label>
+							<label for="date">Tanggal</label>
 							<input type="date" name="date" id="date" value="<?= date('Y-m-d') ?>" class="form-control" required>
 						</div>
 						<div>
-							<label for="barcode">Kode Barang *</label>
+							<label for="barcode">Kode Barang</label>
 						</div>
 						<div class="form-group input-group">
 							<input type="hidden" name="item_id" id="item_id">
@@ -54,16 +50,16 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="detail">Detail *</label>
+							<label for="detail">Detail </label>
 							<input type="text" name="detail" id="detail" class="form-control" placeholder="ex. Hilang / Rusak / Kedaluwarsa / etc" required>
 						</div>
 						<div class="form-group">
-							<label for="qty">Jumlah *</label>
+							<label for="qty">Jumlah</label>
 							<input type="number" name="qty" id="qty" min="1" class="form-control" required>
 						</div>
 						<div class="form-group pull-right">
-							<button type="submit" name="<?= $page ?>" class="btn btn-flat btn-success"><i class="fa fa-paper-plane"></i> Save</button>
-							<button type="reset" class="btn btn-flat">Reset</button>
+							<button type="submit" name="<?= $page ?>" class="btn btn-flat btn-success"><i class="fa fa-paper-plane"></i> Simpan</button>
+							<button type="reset" class="btn btn-flat">Ulangi</button>
 						</div>
 					</form>
 				</div>

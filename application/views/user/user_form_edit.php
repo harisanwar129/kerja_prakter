@@ -7,7 +7,7 @@
 <section class="content">
 	<div class="box">
 		<div class="box-header">
-			<h3 class="box-title">Edit User</h3>
+			<h3 class="box-title">Ubah Pengguna</h3>
 			<div class="pull-right">
 				<a href="<?= site_url('user') ?>" class="btn btn-flat btn-warning btn-sm"><i class="fa fa-undo"></i>Kembali</a>
 			</div>

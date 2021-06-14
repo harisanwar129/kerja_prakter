@@ -4,7 +4,7 @@
     </h1>
     <ol class="breadcrumb">
         <li><a><i class="fa fa-dashboard"></i></a></li>
-        <li class="active">Barang Keluar</li>
+        <li class="active">Barang Masuk</li>
     </ol>
 </section>
 

@@ -6,7 +6,7 @@
 <section class="content">
 	<div class="box">
 		<div class="box-header">
-			<h3 class="box-title"><?= ucfirst($page) ?> Unit</h3>
+			<h3 class="box-title">Satuan Barang</h3>
 			<div class="pull-right">
 				<a href="<?= site_url('unit') ?>" class="btn btn-flat btn-warning btn-sm"><i class="fa fa-undo"></i> Kembali</a>
 			</div>

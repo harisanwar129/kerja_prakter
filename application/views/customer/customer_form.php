@@ -3,14 +3,14 @@
 	</h1>
 	<ol class="breadcrumb">
 		<li><a><i class="fa fa-dashboard"></i></a></li>
-		<li class="active"><?= ucwords($title) ?></li>
+		<li class="active">Pelanggan</li>
 	</ol>
 </section>
 
 <section class="content">
 	<div class="box">
 		<div class="box-header">
-			<h3 class="box-title"><?= ucfirst($page) ?> Pelanggan</h3>
+			<h3 class="box-title">Tambah Pelanggan</h3>
 			<div class="pull-right">
 				<a href="<?= site_url('customer') ?>" class="btn btn-flat btn-warning btn-sm"><i class="fa fa-undo"></i>Kembali</a>
 			</div>

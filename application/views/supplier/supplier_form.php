@@ -1,5 +1,5 @@
 <section class="content-header">
-	<h1><?= ucwords($title) ?>
+	<h1>Pemasok
 		<small>Pemasok Barang</small>
 	</h1>
 	<ol class="breadcrumb">

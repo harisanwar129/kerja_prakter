@@ -22,7 +22,7 @@
 						</div>
 						<div class="form-group pull-right">
 							<button type="submit" name="<?= $page ?>" class="btn btn-flat btn-success"><i class="fa fa-paper-plane"></i> Simpan</button>
-							<button type="reset" class="btn btn-flat">Reset</button>
+							<button type="reset" class="btn btn-flat">Ulangi</button>
 						</div>
 					</form>
 				</div>

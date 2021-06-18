@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 	<style>
 		.hold-transition {
-			background-image: url(<?= base_url('assets/dist/img/photo2.png') ?>);
+			background-image: url(<?= base_url('assets/dist/img/design.jpg') ?>);
 			background-size: 100%;
 		}
 	</style>
@@ -24,7 +24,7 @@
 		</div>
 		<div class="login-logo">
 
-			<a href="<?= base_url() ?>"><b>Login</b> Satria Jaya</a>
+			<a href="<?= base_url() ?>"><b>Login</b> System</a>
 		</div>
 		<!-- /.login-logo -->
 		<div class="login-box-body">

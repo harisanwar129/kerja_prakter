@@ -24,7 +24,7 @@
 		</div>
 		<div class="login-logo">
 
-			<a href="<?= base_url() ?>"><b>Login</b> System</a>
+			<a href="<?= base_url() ?>"><b>Masuk</b> Aplikasi</a>
 		</div>
 		<!-- /.login-logo -->
 		<div class="login-box-body">

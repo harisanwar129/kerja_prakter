@@ -15,6 +15,17 @@ class Unit_m extends CI_Model
 		$query = $this->db->get();
 		return $query;
 	}
+	function check_unit($code, $id = null)
+	{
+		$this->db->select('*');
+		$this->db->from($this->table);
+		$this->db->where('uname', $code);
+		if ($id != null) {
+			$this->db->where('unit_id !=', $id);
+		}
+		$query = $this->db->get();
+		return $query;
+	}
 
 	public function add($data)
 	{

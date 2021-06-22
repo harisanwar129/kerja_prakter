@@ -34,7 +34,7 @@
 						</div>
 						<div class="form-group">
 							<label for="phone">No Telepon *</label>
-							<input type="number" name="phone" id="phone" value="<?= $row->phone ?>" class="form-control" required>
+							<input type="number" min="0" name="phone" id="phone" value="<?= $row->phone ?>" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label for="address">Alamat *</label>

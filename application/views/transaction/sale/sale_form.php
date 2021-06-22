@@ -85,7 +85,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input type="number" id="qty" value="1" min="1" class="form-control">
+                                    <input type="number" min="0" id="qty" value="1" min="1" class="form-control">
                                 </div>
                             </td>
                         </tr>
@@ -130,7 +130,7 @@
                         </td>
                         <td>
                             <div class="form-group">
-                                <input type="number" id="cash" value="0" min="0" class="form-control">
+                                <input type="number" min="0" id="cash" value="0" min="0" class="form-control">
                             </div>
                         </td>
                     </tr>
@@ -150,7 +150,7 @@
                                 </td>
                                 <td>
                                     <div>
-                                        <input type="number" id="change" class="form-control" readonly>
+                                        <input type="number" min="0" id="change" class="form-control" readonly>
                                     </div>
                                     <br>
                                 </td>
@@ -161,7 +161,7 @@
                                 </td>
                                 <td>
                                     <div class="form-group">
-                                        <input type="number" id="discount" value="0" min="0" class="form-control" required>
+                                        <input type="number" min="0" id="discount" value="0" min="0" class="form-control" required>
                                     </div>
                                 </td>
                             </tr>
@@ -346,11 +346,11 @@
                 </div>
                 <div class="form-group">
                     <label for="price_item">Harga</label>
-                    <input type="number" id="price_item" min="0" class="form-control">
+                    <input type="number" min="0" id="price_item" min="0" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="qty_item">Jumlah</label>
-                    <input type="number" id="qty_item" min="1" class="form-control">
+                    <input type="number" min="0" id="qty_item" min="1" class="form-control">
                 </div>
                 <div class="form-group">
                     <!-- <label for="discount_item">Discount Item</label> -->
@@ -358,7 +358,7 @@
                 </div>
                 <div class="form-group">
                     <label for="total_item">Total</label>
-                    <input type="number" id="total_item" class="form-control" readonly>
+                    <input type="number" min="0" id="total_item" class="form-control" readonly>
                 </div>
 			</div>
             <div class="modal-footer">

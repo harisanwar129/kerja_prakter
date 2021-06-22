@@ -56,17 +56,25 @@ class Unit extends CI_Controller
 
 	public function process()
 	{
+		$data = $this->input->post(null, TRUE);
 		if (isset($_POST['add'])) {
-			$data = $this->input->post(null, TRUE);
-			$this->unit->add($data);
+			if ($this->unit->check_unit($data['uname'])->num_rows() > 0) {
+				echo "<script>alert('Nama ini sudah dipakai barang lain');
+				window.location='" . site_url('unit/add') . "';</script>";
+			} else {
+				$this->unit->add($data);
+				echo "<script>alert('Data berhasil disimpan');
+				window.location='" . site_url('unit') . "';</script>";
+			}
 		} else if (isset($_POST['edit'])) {
-			$data = $this->input->post(null, TRUE);
-			$this->unit->edit($data);
-		}
-
-		if ($this->db->affected_rows() == 1) {
-			echo "<script>alert('Data berhasil disimpan');
-			window.location='" . site_url('unit') . "';</script>";
+			if ($this->unit->check_unit($data['uname'], $data['id'])->num_rows() > 0) {
+				echo "<script>alert('Nama ini sudah dipakai barang lain');
+				window.location='" . site_url('unit/edit/' . $data['id']) . "';</script>";
+			} else {
+				$this->unit->edit($data);
+				echo "<script>alert('Data berhasil disimpan');
+				window.location='" . site_url('unit') . "';</script>";
+			}
 		} else {
 			redirect('unit');
 		}

@@ -39,7 +39,7 @@
 						</div>
 						<div class="form-group">
 							<label for="price">Harga *</label>
-							<input type="number" name="price" id="price" value="<?= $row->price ?>" class="form-control" required>
+							<input type="number" min="0" name="price" id="price" value="<?= $row->price ?>" class="form-control" required>
 						</div>
 						<div class="form-group pull-right">
 							<button type="submit" name="<?= $page ?>" class="btn btn-flat btn-success"><i class="fa fa-paper-plane"></i> Simpan</button>

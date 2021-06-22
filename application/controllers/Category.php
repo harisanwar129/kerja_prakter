@@ -56,21 +56,30 @@ class Category extends CI_Controller
 
 	public function process()
 	{
+		$data = $this->input->post(null, TRUE);
 		if (isset($_POST['add'])) {
-			$data = $this->input->post(null, TRUE);
-			$this->category->add($data);
+			if ($this->category->check_category($data['cname'])->num_rows() > 0) {
+				echo "<script>alert('Nama ini sudah dipakai barang lain');
+				window.location='" . site_url('category/add') . "';</script>";
+			} else {
+				$this->category->add($data);
+				echo "<script>alert('Data berhasil disimpan');
+				window.location='" . site_url('category') . "';</script>";
+			}
 		} else if (isset($_POST['edit'])) {
-			$data = $this->input->post(null, TRUE);
-			$this->category->edit($data);
-		}
-
-		if ($this->db->affected_rows() == 1) {
-			echo "<script>alert('Data berhasil disimpan');
-			window.location='" . site_url('category') . "';</script>";
+			if ($this->category->check_category($data['cname'], $data['id'])->num_rows() > 0) {
+				echo "<script>alert('Nama ini sudah dipakai barang lain');
+				window.location='" . site_url('category/edit/' . $data['id']) . "';</script>";
+			} else {
+				$this->category->edit($data);
+				echo "<script>alert('Data berhasil disimpan');
+				window.location='" . site_url('category') . "';</script>";
+			}
 		} else {
 			redirect('category');
 		}
 	}
+
 
 	public function del($id = null)
 	{

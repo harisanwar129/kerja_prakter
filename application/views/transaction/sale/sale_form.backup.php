@@ -83,7 +83,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input type="number" id="qty" value="1" min="1" class="form-control">
+                                    <input type="number" min="0" id="qty" value="1" min="1" class="form-control">
                                 </div>
                             </td>
                         </tr>
@@ -156,7 +156,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input type="number" id="sub_total" value="<?=$subtotal?>" class="form-control" readonly>
+                                    <input type="number" min="0" id="sub_total" value="<?=$subtotal?>" class="form-control" readonly>
                                 </div>
                             </td>
                         </tr>
@@ -166,7 +166,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input type="number" id="discount" value="0" min="0" class="form-control">
+                                    <input type="number" min="0" id="discount" value="0" min="0" class="form-control">
                                 </div>
                             </td>
                         </tr>
@@ -176,7 +176,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input type="number" id="grand_total" class="form-control" readonly>
+                                    <input type="number" min="0" id="grand_total" class="form-control" readonly>
                                 </div>
                             </td>
                         </tr>
@@ -195,7 +195,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input type="number" id="cash" value="0" min="0" class="form-control">
+                                    <input type="number" min="0" id="cash" value="0" min="0" class="form-control">
                                 </div>
                             </td>
                         </tr>
@@ -205,7 +205,7 @@
                             </td>
                             <td>
                                 <div>
-                                    <input type="number" id="change" class="form-control" readonly>
+                                    <input type="number" min="0" id="change" class="form-control" readonly>
                                 </div>    
                             </td>
                         </tr>
@@ -315,19 +315,19 @@
                 </div>
                 <div class="form-group">
                     <label for="price_item">Price</label>
-                    <input type="number" id="price_item" min="0" class="form-control">
+                    <input type="number" min="0" id="price_item" min="0" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="qty_item">Qty</label>
-                    <input type="number" id="qty_item" min="1" class="form-control">
+                    <input type="number" min="0" id="qty_item" min="1" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="discount_item">Discount Item</label>
-                    <input type="number"" id="discount_item" min="0" class="form-control">
+                    <input type="number" min="0"" id="discount_item" min="0" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="total_item">Total</label>
-                    <input type="number" id="total_item" class="form-control" readonly>
+                    <input type="number" min="0" id="total_item" class="form-control" readonly>
                 </div>
 			</div>
             <div class="modal-footer">

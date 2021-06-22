@@ -58,17 +58,25 @@ class Supplier extends CI_Controller {
 
     public function process()
 	{
-		if(isset($_POST['add'])) {
-            $data = $this->input->post(null, TRUE);
-            $this->supplier->add($data);
-		} else if(isset($_POST['edit'])) {
-            $data = $this->input->post(null, TRUE);
-            $this->supplier->edit($data);
-		}
-
-		if($this->db->affected_rows() == 1) {
-			echo "<script>alert('Data berhasil disimpan');
-			window.location='".site_url('supplier')."';</script>";
+		$data = $this->input->post(null, TRUE);
+		if (isset($_POST['add'])) {
+			if ($this->supplier->check_supplier($data['name'])->num_rows() > 0) {
+				echo "<script>alert('Nama ini sudah dipakai pemasok lain');
+				window.location='" . site_url('supplier/add') . "';</script>";
+			} else {
+				$this->supplier->add($data);
+				echo "<script>alert('Data berhasil disimpan');
+				window.location='" . site_url('supplier') . "';</script>";
+			}
+		} else if (isset($_POST['edit'])) {
+			if ($this->supplier->check_supplier($data['name'], $data['id'])->num_rows() > 0) {
+				echo "<script>alert('Nama ini sudah dipakai pemasok lain');
+				window.location='" . site_url('supplier/edit/' . $data['id']) . "';</script>";
+			} else {
+				$this->supplier->edit($data);
+				echo "<script>alert('Data berhasil disimpan');
+				window.location='" . site_url('supplier') . "';</script>";
+			}
 		} else {
 			redirect('supplier');
 		}

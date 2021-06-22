@@ -16,6 +16,19 @@ class Category_m extends CI_Model
 		return $query;
 	}
 
+	function check_category($code, $id = null)
+	{
+		$this->db->select('*');
+		$this->db->from($this->table);
+		$this->db->where('cname', $code);
+		if ($id != null) {
+			$this->db->where('category_id !=', $id);
+		}
+		$query = $this->db->get();
+		return $query;
+	}
+
+
 	public function add($data)
 	{
 		$params = array(

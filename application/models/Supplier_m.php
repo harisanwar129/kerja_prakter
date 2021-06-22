@@ -14,7 +14,17 @@ class Supplier_m extends CI_Model {
 		$query = $this->db->get();
 		return $query;
 	}
-
+	function check_supplier($code, $id = null)
+	{
+		$this->db->select('*');
+		$this->db->from($this->table);
+		$this->db->where('name', $code);
+		if ($id != null) {
+			$this->db->where('supplier_id !=', $id);
+		}
+		$query = $this->db->get();
+		return $query;
+	}
 	public function add($data)
 	{
 		$params = array(

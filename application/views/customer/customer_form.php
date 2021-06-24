@@ -22,7 +22,15 @@
 						<div class="form-group">
 							<label for="name">Nama Pelanggan *</label>
 							<input type="hidden" name="id" value="<?= $row->customer_id ?>">
-							<input type="text" name="name" id="name" value="<?= $row->name ?>" class="form-control" required>
+							<input type="text" name="name" onkeypress="return hanyaHuruf(event);" id="name" value="<?= $row->name ?>" class="form-control" required>
+							<script type="text/javascript">
+							function hanyaHuruf(evt){
+								var charCode = (evt.which) ? evt.which : event.keyCode
+								 if(charCode > 31 && (charCode < 48 || charCode >57))
+								return true;
+								return false;
+							}
+							</script>
 						</div>
 						<div class="form-group">
 							<label for="gender">Jenis Kelamin *</label>

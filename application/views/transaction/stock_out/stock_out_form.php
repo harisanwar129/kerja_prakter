@@ -51,7 +51,15 @@
 						</div>
 						<div class="form-group">
 							<label for="detail">Detail </label>
-							<input type="text" name="detail" id="detail" class="form-control" placeholder="ex. Hilang / Rusak / Kedaluwarsa / etc" required>
+							<input type="text" name="detail" onkeypress="return hanyaHuruf(event);" id="detail" class="form-control" placeholder="ex. Hilang / Rusak / Kedaluwarsa / etc" required>
+							<script>
+							function hanyaHuruf(evt){
+								var charCode = (evt.which) ? evt.which : event.keyCode
+								 if(charCode > 31 && (charCode < 48 || charCode >57))
+								return true;
+								return false;
+							}
+							</script>
 						</div>
 						<div class="form-group">
 							<label for="qty">Jumlah</label>

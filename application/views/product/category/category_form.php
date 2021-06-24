@@ -19,7 +19,15 @@
 						<div class="form-group">
 							<label for="name">Nama Kategori *</label>
 							<input type="hidden" name="id" value="<?= $row->category_id ?>">
-							<input type="text" name="cname" id="name" value="<?= $row->cname ?>" class="form-control" required>
+							<input type="text" name="cname" onkeypress="return hanyaHuruf(event);" id="name" value="<?= $row->cname ?>" class="form-control" required>
+							<script>
+							function hanyaHuruf(evt){
+								var charCode = (evt.which) ? evt.which : event.keyCode
+								 if(charCode > 31 && (charCode < 48 || charCode >57))
+								return true;
+								return false;
+							}
+							</script>
 						</div>
 						<div class="form-group pull-right">
 							<button type="submit" name="<?= $page ?>" class="btn btn-flat btn-success"><i class="fa fa-paper-plane"></i> Simpan</button>

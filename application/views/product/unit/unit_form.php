@@ -18,7 +18,15 @@
 						<div class="form-group">
 							<label for="name">Nama Satuan *</label>
 							<input type="hidden" name="id" value="<?= $row->unit_id ?>">
-							<input type="text" name="uname" id="name" value="<?= $row->uname ?>" class="form-control" required>
+							<input type="text" name="uname" onkeypress="return hanyaHuruf(event);" id="name" value="<?= $row->uname ?>" class="form-control" required>
+							<script>
+							function hanyaHuruf(evt){
+								var charCode = (evt.which) ? evt.which : event.keyCode
+								 if(charCode > 31 && (charCode < 48 || charCode >57))
+								return true;
+								return false;
+							}
+							</script>
 						</div>
 						<div class="form-group pull-right">
 							<button type="submit" name="<?= $page ?>" class="btn btn-flat btn-success"><i class="fa fa-paper-plane"></i> Simpan</button>

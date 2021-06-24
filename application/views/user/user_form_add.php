@@ -23,8 +23,16 @@
 					<form action="" method="post" autocomplete="off">
 						<div class="form-group <?= form_error('name') ? 'has-error' : null ?>">
 							<label for="name">Nama</label>
-							<input type="text" name="name" id="name" value="<?= set_value('name') ?>" class="form-control">
+							<input type="text" name="name" onkeypress="return hanyaHuruf(event);" id="name" value="<?= set_value('name') ?>" class="form-control">
 							<?= form_error('name') ?>
+							<script type="text/javascript">
+							function hanyaHuruf(evt){
+								var charCode = (evt.which) ? evt.which : event.keyCode
+								 if(charCode > 31 && (charCode < 48 || charCode >57))
+								return true;
+								return false;
+							}
+							</script>
 						</div>
 						<div class="form-group <?= form_error('username') ? 'has-error' : null ?>">
 							<label for="username">Nama Pengguna</label>

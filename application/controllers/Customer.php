@@ -58,22 +58,29 @@ class Customer extends CI_Controller {
 
     public function process()
 	{
-		if(isset($_POST['add'])) {
-            $data = $this->input->post(null, TRUE);
-            $this->customer->add($data);
-		} else if(isset($_POST['edit'])) {
-            $data = $this->input->post(null, TRUE);
-            $this->customer->edit($data);
-		}
-
-		if($this->db->affected_rows() == 1) {
-			echo "<script>alert('Data berhasil disimpan');
-			window.location='".site_url('customer')."';</script>";
+		$data = $this->input->post(null, TRUE);
+		if (isset($_POST['add'])) {
+			if ($this->customer->check_customer($data['name'],null, $data['addr'])->num_rows() > 0) {
+				echo "<script>alert('Nama ini sudah dipakai nama lain lain');
+				window.location='" . site_url('customer/add') . "';</script>";
+			} else {
+				$this->customer->add($data);
+				echo "<script>alert('Data berhasil disimpan');
+				window.location='" . site_url('customer') . "';</script>";
+			}
+		} else if (isset($_POST['edit'])) {
+			if ($this->customer->check_customer($data['name'], $data['id'])->num_rows() > 0) {
+				echo "<script>alert('Nama ini sudah dipakai barang lain');
+				window.location='" . site_url('customer/edit/' . $data['id']) . "';</script>";
+			} else {
+				$this->customer->edit($data);
+				echo "<script>alert('Data berhasil disimpan');
+				window.location='" . site_url('customer') . "';</script>";
+			}
 		} else {
 			redirect('customer');
 		}
 	}
-
     public function del($id = null)
 	{
 		$this->customer->del($id);

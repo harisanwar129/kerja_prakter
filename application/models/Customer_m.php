@@ -14,6 +14,20 @@ class Customer_m extends CI_Model {
 		$query = $this->db->get();
 		return $query;
 	}
+	function check_customer($code, $id = null,$addr=null)
+	{
+					$this->db->select('*');
+			$this->db->from($this->table);
+			$this->db->where('name', $code);
+			if($addr != null){
+				$this->db->where('address', $addr);
+			}
+			if($id != null){
+			$this->db->where('customer_id !=' , $id);
+			}
+			$query = $this->db->get();
+			return $query;
+				}
 
 	public function add($data)
 	{

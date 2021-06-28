@@ -60,8 +60,8 @@ class Supplier extends CI_Controller {
 	{
 		$data = $this->input->post(null, TRUE);
 		if (isset($_POST['add'])) {
-			if ($this->supplier->check_supplier($data['name'])->num_rows() > 0) {
-				echo "<script>alert('Nama ini sudah dipakai pemasok lain');
+			if ($this->supplier->check_supplier($data['name'],null,$data['addr'])->num_rows() > 0) {
+				echo "<script>alert('Nama dan Alamat sudah ada');
 				window.location='" . site_url('supplier/add') . "';</script>";
 			} else {
 				$this->supplier->add($data);

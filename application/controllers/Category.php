@@ -59,7 +59,7 @@ class Category extends CI_Controller
 		$data = $this->input->post(null, TRUE);
 		if (isset($_POST['add'])) {
 			if ($this->category->check_category($data['cname'])->num_rows() > 0) {
-				echo "<script>alert('Nama ini sudah dipakai barang lain');
+				echo "<script>alert('Nama kategori sudah ada');
 				window.location='" . site_url('category/add') . "';</script>";
 			} else {
 				$this->category->add($data);

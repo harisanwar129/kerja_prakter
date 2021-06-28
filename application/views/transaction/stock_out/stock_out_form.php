@@ -63,7 +63,7 @@
 						</div>
 						<div class="form-group">
 							<label for="qty">Jumlah</label>
-							<input type="number" min="0" name="qty" id="qty" min="1" class="form-control" required>
+							<input type="number" min="1" name="qty" id="qty" min="1" class="form-control" required>
 						</div>
 						<div class="form-group pull-right">
 							<button type="submit" name="<?= $page ?>" class="btn btn-flat btn-success"><i class="fa fa-paper-plane"></i> Simpan</button>

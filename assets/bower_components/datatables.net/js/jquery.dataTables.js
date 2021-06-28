@@ -11700,7 +11700,7 @@
 			 * displayed after filtering. `emptyTable` is shown when there is simply no
 			 * information in the table at all (regardless of filtering).
 			 *  @type string
-			 *  @default No matching records found
+			 *  @default Data Tidak Ditemukan
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.zeroRecords
@@ -11714,7 +11714,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "No matching records found"
+			"sZeroRecords": "Data Tidak Ditemukan"
 		},
 	
 	

@@ -25,9 +25,9 @@
 
 							<th style="text-align: center;">Foto</th>
 							<th style="text-align: center;">Nama</th>
+							<th style="text-align: center;">Nama Pengguna</th>
 							<th style="text-align: center;">Alamat</th>
-							<th style="text-align: center;">Dibuat Pada</th>
-							<th style="text-align: center;">Diubah pada</th>
+							<!-- <th style="text-align: center;">Diubah pada</th> -->
 						</tr>
 					</thead>
 					<tbody>
@@ -36,12 +36,12 @@
 
 
 							<td><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-									<img style="border-radius:100%; margin-left:10%;" src="<?= base_url() ?>assets/dist/img/user.png" class="user-image">
+									<img style="border-radius:100%; margin-left:35%;text-align:center;" src="<?= base_url() ?>assets/dist/img/user.png" class="user-image">
 								</a></td>
-							<td style="font-size:20px;line-height: 120px;"> <?= $this->fungsi->user_login()->username ?></td>
-							<td style="font-size:20px;line-height: 120px;"><?= $this->fungsi->user_login()->address ?></td>
-							<td style="font-size:20px;line-height: 120px;"><?= $this->fungsi->user_login()->created ?></td>
-							<td style="font-size:20px;line-height: 120px;"><?= $this->fungsi->user_login()->updated ?></td>
+							<td style="font-size:20px;text-align:center;line-height: 120px;"> <?= $this->fungsi->user_login()->name ?></td>
+							<td style="font-size:20px;text-align:center;line-height: 120px;"><?= $this->fungsi->user_login()->username ?></td>
+						<td style="font-size:20px;text-align:center;line-height: 120px;"><?= $this->fungsi->user_login()->address?></td>
+							<!-- <td style="font-size:20px;line-height: 120px;"><?= $this->fungsi->user_login()->updated ?></td>  -->
 						</tr>
 					</tbody>
 				</table>
@@ -119,18 +119,14 @@
 
 
 		<div class="row">
-			<div class="col-md-1">
-
-			</div>
-			<div class="col-md-9">
-				<div class="box box-solid">
-					<div class="box-header">
-						<i class="fa fa-th"></i>
-						<h3 class="box-title">Akun Pengguna</h3>
+		
+			<div class="col-md-12">
+				
+						<!-- <h3 class="box-title">Akun Pengguna</h3>
 						<div class="box-tools pull-right">
 							<button type="button" class="btn btn-sm" data-widget="collapse">
 								<i class="fa fa-minus">
-								</i>
+								</i> -->
 								<section class="content">
 									<div class="box">
 										<div class="box-header">
@@ -144,9 +140,9 @@
 
 														<th style="text-align: center;">Foto</th>
 														<th style="text-align: center;">Nama</th>
+														<th style="text-align: center;">Nama Pengguna</th>
 														<th style="text-align: center;">Alamat</th>
-														<th style="text-align: center;">Dibuat Pada</th>
-														<th style="text-align: center;">Diubah pada</th>
+														<!-- <th style="text-align: center;">Diubah pada</th> -->
 													</tr>
 												</thead>
 												<tbody>
@@ -155,12 +151,12 @@
 
 
 														<td><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-																<img style="border-radius:100%; margin-left:10%;" src="<?= base_url() ?>assets/dist/img/user.png" class="user-image">
+																<img style="border-radius:100%;text-align:center; margin-left:10%;" src="<?= base_url() ?>assets/dist/img/user.png" class="user-image">
 															</a></td>
-														<td style="font-size:20px;line-height: 120px;"> <?= $this->fungsi->user_login()->username ?></td>
-														<td style="font-size:20px;line-height: 120px;"><?= $this->fungsi->user_login()->address ?></td>
-														<td style="font-size:20px;line-height: 120px;"><?= $this->fungsi->user_login()->created ?></td>
-														<td style="font-size:20px;line-height: 120px;"><?= $this->fungsi->user_login()->updated ?></td>
+														<td style="font-size:20px;text-align:center;line-height: 120px;"> <?= $this->fungsi->user_login()->name ?></td>
+														<td style="font-size:20px;text-align:center;line-height: 120px;"><?= $this->fungsi->user_login()->username ?></td>
+														<td style="font-size:20px;text-align:center;line-height: 120px;"><?= $this->fungsi->user_login()->address ?></td>
+														<!-- <td style="font-size:20px;line-height: 120px;"><?= $this->fungsi->user_login()->updated ?></td> -->
 													</tr>
 												</tbody>
 											</table>
@@ -169,14 +165,8 @@
 								</section>
 
 							</button>
-						</div>
-					</div>
-					<div class="box-body">
-						<div id="hero-bar" class="graph"></div>
-					</div>
-				</div>
-			</div>
-		</div>
+				
+		
 	</section>
 
 	<link rel="stylesheet" href="<?= base_url() ?>assets/bower_components/morris.js/morris.css">

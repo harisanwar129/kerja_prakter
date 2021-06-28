@@ -85,7 +85,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input type="number" min="0" id="qty" value="1" min="1" class="form-control">
+                                    <input type="number" min="1" id="qty" value="1"  class="form-control">
                                 </div>
                             </td>
                         </tr>

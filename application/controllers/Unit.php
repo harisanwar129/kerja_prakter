@@ -59,7 +59,7 @@ class Unit extends CI_Controller
 		$data = $this->input->post(null, TRUE);
 		if (isset($_POST['add'])) {
 			if ($this->unit->check_unit($data['uname'])->num_rows() > 0) {
-				echo "<script>alert('Nama ini sudah dipakai barang lain');
+				echo "<script>alert('Satuan Barang Sudah ada');
 				window.location='" . site_url('unit/add') . "';</script>";
 			} else {
 				$this->unit->add($data);

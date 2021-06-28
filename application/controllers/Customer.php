@@ -61,7 +61,7 @@ class Customer extends CI_Controller {
 		$data = $this->input->post(null, TRUE);
 		if (isset($_POST['add'])) {
 			if ($this->customer->check_customer($data['name'],null, $data['addr'])->num_rows() > 0) {
-				echo "<script>alert('Nama ini sudah dipakai nama lain lain');
+				echo "<script>alert('Nama dan alamat sudah ada');
 				window.location='" . site_url('customer/add') . "';</script>";
 			} else {
 				$this->customer->add($data);
